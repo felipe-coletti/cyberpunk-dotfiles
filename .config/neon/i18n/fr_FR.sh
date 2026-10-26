@@ -1,0 +1,5 @@
+title="Couleur du néon"
+brightness="Luminosité"
+default="Par défaut"
+cancel="Annuler"
+apply="Appliquer"

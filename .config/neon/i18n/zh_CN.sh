@@ -1,0 +1,5 @@
+title="霓虹颜色"
+brightness="亮度"
+default="默认"
+cancel="取消"
+apply="应用"

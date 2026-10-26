@@ -1,0 +1,5 @@
+title="নিয়ন রং"
+brightness="উজ্জ্বলতা"
+default="ডিফল্ট"
+cancel="বাতিল"
+apply="প্রয়োগ করুন"

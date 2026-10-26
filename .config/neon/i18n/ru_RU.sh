@@ -1,0 +1,5 @@
+title="Цвет неона"
+brightness="Яркость"
+default="По умолчанию"
+cancel="Отмена"
+apply="Применить"

@@ -1,0 +1,5 @@
+title="Warna neon"
+brightness="Kecerahan"
+default="Bawaan"
+cancel="Batal"
+apply="Terapkan"

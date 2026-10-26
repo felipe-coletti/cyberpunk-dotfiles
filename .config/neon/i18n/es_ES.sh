@@ -1,0 +1,5 @@
+title="Color del neón"
+brightness="Brillo"
+default="Predeterminado"
+cancel="Cancelar"
+apply="Aplicar"

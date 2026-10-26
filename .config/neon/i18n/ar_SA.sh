@@ -1,0 +1,5 @@
+title="لون النيون"
+brightness="السطوع"
+default="الافتراضي"
+cancel="إلغاء"
+apply="تطبيق"

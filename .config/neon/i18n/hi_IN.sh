@@ -1,0 +1,5 @@
+title="नियॉन रंग"
+brightness="चमक"
+default="डिफ़ॉल्ट"
+cancel="रद्द करें"
+apply="लागू करें"
