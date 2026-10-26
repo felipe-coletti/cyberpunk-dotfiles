@@ -1,6 +1,7 @@
 # Cyberpunk Dotfiles
 
-![Desktop com neon ciano](screenshots/screenshot-cian.png)
+![Desktop com neon ciano](assets/screenshots/screenshot-cian.png)
+![The neon color changing across the whole theme](assets/gifs/neon.gif)
 
 ## Installation
 
@@ -27,6 +28,35 @@ You can also apply a color from the terminal:
 ```
 
 GTK apps that were already open (like Thunar) only change color after a restart.
+
+## Keybindings
+
+`SUPER` is the Windows key.
+
+| Keys | Action |
+| --- | --- |
+| `SUPER + Return` | Open the terminal (foot) |
+| `SUPER + D` | Open the app launcher |
+| `SUPER + E` | Open the file manager (Thunar) |
+| `SUPER + N` | Pick the neon color |
+| `SUPER + Q` | Close the window (with no window open: power menu) |
+| `SUPER + L` | Lock the screen |
+| `SUPER + V` | Toggle floating |
+| `SUPER + P` | Toggle pseudo-tiling |
+| `SUPER + J` | Toggle the split direction |
+| `SUPER + arrows` | Move focus |
+| `SUPER + 1…0` | Go to workspace 1–10 |
+| `SUPER + SHIFT + 1…0` | Move the window to workspace 1–10 |
+| `SUPER + TAB` | Show or hide the scratchpad |
+| `SUPER + SHIFT + TAB` | Move the window to the scratchpad |
+| `SUPER + mouse wheel` | Switch workspace |
+| `SUPER + left drag` | Move the window |
+| `SUPER + right drag` | Resize the window |
+| `SUPER + PRINT` | Screenshot of the whole screen |
+| `SUPER + SHIFT + PRINT` | Screenshot of an area |
+| 3-finger horizontal swipe | Switch workspace |
+
+Screenshots are saved to your pictures folder. The media, volume and brightness keys work as usual.
 
 ## Languages
 
