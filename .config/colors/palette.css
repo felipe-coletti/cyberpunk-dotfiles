@@ -1,5 +1,5 @@
-/* Paleta neon */
-/* A cor do neon fica em neon.css, escolhida pela roda de cores (SUPER + N) */
+/* Neon palette (same design as to-do-list) */
+/* The neon color lives in neon.css and is picked with the color wheel (SUPER + N) */
 @import url("neon.css");
 
 @define-color bg #000000;

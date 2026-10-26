@@ -1,8 +1,8 @@
-# Helper de idioma compartilhado pelos scripts dos dotfiles (uso: source)
+# Language helper shared by the dotfiles scripts (usage: source)
 
-# Escolhe o arquivo de tradução do locale do sistema dentro de um diretório
-# Ordem: idioma exato (pt_BR) → mesmo idioma de outra região (pt_PT → pt_BR) → en_US
-# Uso: resolve_lang <diretório> <extensão>  →  imprime o caminho do arquivo
+# Picks the translation file for the system locale inside a directory
+# Order: exact language (pt_BR) → same language, another region (pt_PT → pt_BR) → en_US
+# Usage: resolve_lang <directory> <extension>  →  prints the file path
 resolve_lang() {
     local dir="$1" ext="$2"
     local lang="${LC_ALL:-${LC_MESSAGES:-$LANG}}"

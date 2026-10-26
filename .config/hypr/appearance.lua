@@ -24,7 +24,7 @@ hl.config({
 
         shadow = {
             enabled      = true,
-            -- Brilho neon em volta da janela ativa
+            -- Neon glow around the active window
             range          = 8,
             render_power   = 3,
             color          = tonumber("99" .. neon, 16),
@@ -43,7 +43,7 @@ hl.config({
         enabled = true,
     },
 
-    -- Comportamento geral
+    -- General behavior
     misc = {
         force_default_wallpaper = -1,
         disable_hyprland_logo   = false,

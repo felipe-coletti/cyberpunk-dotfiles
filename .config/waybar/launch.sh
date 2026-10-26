@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Seleciona os textos do idioma do sistema e inicia o waybar
+# Selects the texts for the system language and starts waybar
 
 source "$HOME/.config/dotfiles/lang.sh"
 

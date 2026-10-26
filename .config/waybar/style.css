@@ -76,7 +76,7 @@ window#waybar {
     margin-right: 10px;
 }
 
-/* Monocromático: estados de alerta ficam apagados ou com brilho extra */
+/* Monochrome: alert states are dimmed or get extra glow */
 #pulseaudio.muted {
     color: @text_dim;
     text-shadow: none;

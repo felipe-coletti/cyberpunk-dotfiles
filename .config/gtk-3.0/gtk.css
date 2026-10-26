@@ -6,7 +6,7 @@ window.thunar {
     color: @text;
 }
 
-/* Barra de menus */
+/* Menu bar */
 window.thunar menubar {
     background-color: @bg;
     border-bottom: 1px solid @border;
@@ -21,7 +21,7 @@ window.thunar menubar > menuitem:hover {
     background-color: @bg_hover;
 }
 
-/* Barra de ferramentas e caminho */
+/* Toolbar and path bar */
 window.thunar toolbar,
 window.thunar .toolbar {
     background-color: @bg_alt;
@@ -58,14 +58,14 @@ window.thunar entry:focus {
     box-shadow: 0 0 3px @text, inset 0 0 3px @text;
 }
 
-/* Painel lateral */
+/* Sidebar */
 window.thunar .sidebar,
 window.thunar .sidebar .view {
     background-color: @bg_alt;
     color: @text_dim;
 }
 
-/* Lista e ícones de arquivos */
+/* File list and icons */
 window.thunar .view,
 window.thunar treeview,
 window.thunar iconview {
@@ -88,9 +88,9 @@ window.thunar treeview header button {
     color: @text_dim;
 }
 
-/* Divisória e barra de status */
-/* A divisória é mais larga que a linha visível: fundo transparente e
-   só 1px de borda, senão sobra um bloco ao lado da barra de status */
+/* Divider and status bar */
+/* The divider is wider than the visible line: transparent background and
+   only a 1px border, otherwise a block is left next to the status bar */
 window.thunar paned > separator {
     background-color: transparent;
     background-image: none;
@@ -106,8 +106,8 @@ window.thunar statusbar {
     margin: 0;
 }
 
-/* Bordas que vêm do Adwaita. A moldura da área dos arquivos duplicaria as
-   linhas da divisória, da barra de ferramentas e da barra de status */
+/* Borders that come from Adwaita. The file view frame would double the
+   divider, toolbar and status bar lines */
 window.thunar scrolledwindow,
 window.thunar scrolledwindow.frame,
 window.thunar frame > border {
@@ -138,7 +138,7 @@ window.thunar scrollbar slider {
     min-height: 4px;
 }
 
-/* ─── Menus de contexto (todos os apps GTK) ──────────────── */
+/* ─── Context menus (all GTK apps) ───────────────────────── */
 menu,
 .menu,
 .context-menu {

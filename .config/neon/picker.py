@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Roda de cores para escolher a cor do neon.
+"""Color wheel to pick the neon color.
 
-Uso: picker.py [RRGGBB]
-Imprime a cor escolhida (RRGGBB) e sai com 0; ao cancelar, sai com 1.
-Os textos vêm das variáveis NEON_* (definidas pelo pick.sh).
+Usage: picker.py [RRGGBB]
+Prints the chosen color (RRGGBB) and exits with 0; on cancel, exits with 1.
+The labels come from the NEON_* variables (set by pick.sh).
 """
 
 import colorsys
@@ -20,8 +20,8 @@ from gi.repository import Gdk, GLib, Gtk  # noqa: E402
 
 DEFAULT = "ffffff"
 WHEEL_SIZE = 240
-WHEEL_PADDING = 8  # espaço para o marcador não ser cortado na borda
-MIN_BRIGHTNESS = 0.2  # abaixo disso o neon some no fundo preto
+WHEEL_PADDING = 8  # room so the marker is not cut off at the edge
+MIN_BRIGHTNESS = 0.2  # below this the neon fades into the black background
 
 
 def text(key, fallback):
@@ -49,7 +49,7 @@ class Picker(Gtk.Window):
         self.set_resizable(False)
         self.set_position(Gtk.WindowPosition.CENTER)
         self.result = None
-        self.syncing = False  # evita loops entre o campo hex e a roda
+        self.syncing = False  # avoids loops between the hex field and the wheel
         self.wheel_cache = None
 
         self.css = Gtk.CssProvider()
@@ -66,7 +66,7 @@ class Picker(Gtk.Window):
         heading.get_style_context().add_class("heading")
         root.pack_start(heading, False, False, 0)
 
-        # Roda: ângulo = matiz, distância do centro = saturação (centro = branco)
+        # Wheel: angle = hue, distance from the center = saturation (center = white)
         self.wheel = Gtk.DrawingArea()
         self.wheel.set_size_request(WHEEL_SIZE, WHEEL_SIZE)
         self.wheel.add_events(
@@ -117,7 +117,7 @@ class Picker(Gtk.Window):
 
         self.set_hex(initial)
 
-    # ─── Estado ─────────────────────────────────────────────
+    # ─── State ──────────────────────────────────────────────
     @property
     def hex(self):
         return rgb_to_hex(*colorsys.hsv_to_rgb(self.h, self.s, self.v))
@@ -140,7 +140,7 @@ class Picker(Gtk.Window):
         self.result = self.hex
         self.destroy()
 
-    # ─── Eventos ────────────────────────────────────────────
+    # ─── Events ─────────────────────────────────────────────
     def on_pointer(self, area, event):
         size = min(area.get_allocated_width(), area.get_allocated_height())
         c = size / 2
@@ -171,15 +171,15 @@ class Picker(Gtk.Window):
             return True
         return False
 
-    # ─── Desenho ────────────────────────────────────────────
+    # ─── Drawing ────────────────────────────────────────────
     def render_wheel(self, size):
         surface = cairo.ImageSurface(cairo.FORMAT_ARGB32, size, size)
         cr = cairo.Context(surface)
         c = size / 2
         radius = c - WHEEL_PADDING
-        # Sem antialias nas fatias, senão aparecem riscos entre elas
+        # No antialiasing on the slices, otherwise seams show between them
         cr.set_antialias(cairo.ANTIALIAS_NONE)
-        # Uma fatia por grau, com gradiente do branco (centro) até a matiz
+        # One slice per degree, with a gradient from white (center) to the hue
         for degree in range(360):
             r, g, b = colorsys.hsv_to_rgb(degree / 360, 1, 1)
             gradient = cairo.RadialGradient(c, c, 0, c, c, radius)
@@ -187,7 +187,7 @@ class Picker(Gtk.Window):
             gradient.add_color_stop_rgb(1, r, g, b)
             cr.set_source(gradient)
             cr.move_to(c, c)
-            # Ângulos negativos: a matiz cresce no sentido anti-horário
+            # Negative angles: the hue grows counterclockwise
             cr.arc(c, c, radius, math.radians(-degree - 1.5), math.radians(-degree + 0.5))
             cr.close_path()
             cr.fill()
@@ -201,17 +201,17 @@ class Picker(Gtk.Window):
         c = size / 2
         radius = c - WHEEL_PADDING
 
-        # Recorta num círculo com antialias para a borda da roda ficar lisa
+        # Clip to an antialiased circle so the edge of the wheel is smooth
         cr.arc(c, c, radius, 0, 2 * math.pi)
         cr.clip()
         cr.set_source_surface(self.wheel_cache, 0, 0)
         cr.paint()
 
-        # Brilho: escurece a roda inteira
+        # Brightness: darkens the whole wheel
         cr.set_source_rgba(0, 0, 0, 1 - self.v)
         cr.paint()
         cr.reset_clip()
-        # Marcador quadrado, contornado em preto para aparecer sobre o branco
+        # Square marker, outlined in black so it shows over white
         angle = self.h * 2 * math.pi
         x = c + math.cos(angle) * self.s * radius
         y = c - math.sin(angle) * self.s * radius
@@ -225,7 +225,7 @@ class Picker(Gtk.Window):
         return False
 
     def restyle(self):
-        # A própria janela usa a cor escolhida, como prévia do tema
+        # The window itself uses the chosen color, as a theme preview
         n = f"#{self.hex}"
         self.css.load_from_data(f"""
             window {{ background-color: #000000; }}
@@ -272,7 +272,7 @@ class Picker(Gtk.Window):
 
 def main():
     initial = parse_hex(sys.argv[1]) if len(sys.argv) > 1 else None
-    # app_id no Wayland, usado pela regra de janela do Hyprland
+    # app_id on Wayland, used by the Hyprland window rule
     GLib.set_prgname("neon-picker")
     picker = Picker(initial or DEFAULT)
     picker.show_all()

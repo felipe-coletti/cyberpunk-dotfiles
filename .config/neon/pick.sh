@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
-# Abre a roda de cores e aplica a cor escolhida no neon
+# Opens the color wheel and applies the chosen neon color
 
 source "$HOME/.config/dotfiles/lang.sh"
 source "$(resolve_lang "$HOME/.config/neon/i18n" sh)"
 
 readonly dir="$HOME/.config/neon"
 
-# Só uma janela por vez
+# Only one window at a time
 pgrep -f "$dir/picker.py" >/dev/null && exit 0
 
 export NEON_TITLE="$title" NEON_BRIGHTNESS="$brightness"

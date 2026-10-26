@@ -1,11 +1,11 @@
--- Ignora pedidos de maximizar (evita janelas "travadas" em fullscreen)
+-- Ignore maximize requests (avoids windows "stuck" in fullscreen)
 hl.window_rule({
     name           = "suppress-maximize",
     match          = { class = ".*" },
     suppress_event = "maximize",
 })
 
--- Corrige problemas de drag com XWayland
+-- Fix drag issues with XWayland
 hl.window_rule({
     name  = "fix-xwayland-drags",
     match = {
@@ -19,14 +19,14 @@ hl.window_rule({
     no_focus = true,
 })
 
--- Roda de cores do neon aparece flutuante
+-- The neon color wheel opens floating
 hl.window_rule({
     name  = "neon-picker-float",
     match = { class = "neon-picker" },
     float = true,
 })
 
--- hyprland-run (menu de confirmação) aparece flutuante e centralizado
+-- hyprland-run (confirmation menu) opens floating and centered
 hl.window_rule({
     name  = "hyprland-run-position",
     match = { class = "hyprland-run" },

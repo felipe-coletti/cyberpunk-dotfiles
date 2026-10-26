@@ -19,10 +19,10 @@ get_ddcutil_display() {
     local monitor_name="$1"
     case "$monitor_name" in
         "DP-7")
-            echo "1"  # Ajuste conforme sua saída em 'ddcutil detect'
+            echo "1"  # Adjust to match your 'ddcutil detect' output
             ;;
         *)
-            echo ""  # Sem suporte DDC/CI
+            echo ""  # No DDC/CI support
             ;;
     esac
 }

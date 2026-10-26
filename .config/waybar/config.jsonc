@@ -5,7 +5,7 @@
     "spacing": 8,
     "margin": 0,
 
-    // Textos traduzidos: i18n/<idioma>.jsonc, selecionado pelo launch.sh
+    // Translated texts: i18n/<language>.jsonc, selected by launch.sh
     "include": ["~/.config/waybar/i18n/current.jsonc"],
 
     "modules-left": ["custom/shutdown", "custom/neon", "custom/vseparator", "hyprland/workspaces"],

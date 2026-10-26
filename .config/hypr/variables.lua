@@ -1,16 +1,16 @@
--- ─── Caminhos ────────────────────────────────────────────────
+-- ─── Paths ───────────────────────────────────────────────────
 home = os.getenv("HOME")
 
--- ─── Programas ───────────────────────────────────────────────
+-- ─── Programs ────────────────────────────────────────────────
 terminal    = "foot"
 fileManager = "thunar"
 menu        = home .. "/.config/wofi/scripts/launcher.sh"
 
--- ─── Variáveis de ambiente ──────────────────────────────────
+-- ─── Environment variables ──────────────────────────────────
 hl.env("XCURSOR_SIZE",    "24")
 hl.env("HYPRCURSOR_SIZE", "24")
 
--- Wayland nativo quando possível (evita apps pixelados via XWayland)
+-- Native Wayland when possible (avoids blurry apps through XWayland)
 hl.env("GDK_BACKEND",                  "wayland,x11,*")
 hl.env("QT_QPA_PLATFORM",              "wayland;xcb")
 hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
