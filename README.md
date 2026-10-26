@@ -2,7 +2,7 @@
 
 ![Desktop com neon ciano](screenshots/screenshot-cian.png)
 
-## Instalação
+## Installation
 
 ```bash
 git clone <repository-url> ~/.cyberpunk-dotfiles
@@ -10,37 +10,39 @@ cd ~/.cyberpunk-dotfiles
 ./install.sh
 ```
 
-## Cor do neon
+Before copying anything, the installer backs up your current configs to `~/.dotfiles-backup-<date>`. It also renames your home folders to the system language (for example, `Pictures` becomes `Imagens` on a Portuguese system). A folder is left as is when one with the new name already exists.
 
-O neon é branco por padrão. Para trocar, aperte `SUPER + N` ou clique no ícone de paleta na waybar e escolha a cor na roda de cores. O botão **Padrão** volta ao branco.
+## Neon color
 
-Também dá para aplicar uma cor direto pelo terminal:
+The neon is white by default. To change it, press `SUPER + N` or click the palette icon on waybar and pick a color on the color wheel. The **Default** button goes back to white.
+
+You can also apply a color from the terminal:
 
 ```bash
 ~/.config/neon/apply.sh 00ffcc
 ```
 
-Apps GTK que já estavam abertos (como o Thunar) só mudam de cor ao reiniciar.
+GTK apps that were already open (like Thunar) only change color after a restart.
 
-## Idiomas
+## Languages
 
-Os textos dos menus, da waybar e da roda de cores seguem o idioma do sistema. Os idiomas disponíveis são os 10 mais falados do mundo:
+The menus, waybar and the color wheel follow the system language. The available languages are the 10 most spoken in the world:
 
-| Idioma | Código |
-| --- | --- |
-| Inglês | `en_US` |
-| Mandarim (simplificado) | `zh_CN` |
-| Hindi | `hi_IN` |
-| Espanhol | `es_ES` |
-| Árabe | `ar_SA` |
-| Francês | `fr_FR` |
-| Bengali | `bn_BD` |
-| Português | `pt_BR` |
-| Russo | `ru_RU` |
-| Indonésio | `id_ID` |
+| Language | Native name | Code |
+| --- | --- | --- |
+| English | English | `en_US` |
+| Mandarin (simplified) | 中文（简体） | `zh_CN` |
+| Hindi | हिन्दी | `hi_IN` |
+| Spanish | Español | `es_ES` |
+| Arabic | العربية | `ar_SA` |
+| French | Français | `fr_FR` |
+| Bengali | বাংলা | `bn_BD` |
+| Portuguese | Português | `pt_BR` |
+| Russian | Русский | `ru_RU` |
+| Indonesian | Bahasa Indonesia | `id_ID` |
 
-Outras variantes de um idioma usam a tradução dele (por exemplo, `es_MX` usa `es_ES`, e `pt_PT` usa `pt_BR`). Idiomas sem tradução usam o inglês.
+Other variants of a language use its translation (for example, `es_MX` uses `es_ES` and `pt_PT` uses `pt_BR`). Languages without a translation fall back to English.
 
-## Licença
+## License
 
 [MIT](LICENSE)
