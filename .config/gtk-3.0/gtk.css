@@ -153,3 +153,275 @@ menu menuitem:hover,
 .menu menuitem:hover {
     background-color: @bg_hover;
 }
+
+/* ─── Dialogs (all GTK apps) ──────────────────────────────── */
+/* Confirmations, file conflicts, properties, rename, progress and the
+   open/save window (also used by browsers for downloads) */
+messagedialog.background,
+dialog.background,
+messagedialog .titlebar,
+dialog headerbar {
+    background-color: @bg;
+    background-image: none;
+    color: @text;
+}
+
+/* Square corners; the window border comes from Hyprland */
+messagedialog decoration,
+dialog decoration {
+    border-radius: 0;
+    box-shadow: none;
+}
+
+messagedialog .titlebar,
+dialog headerbar {
+    border: none;
+    border-bottom: 1px solid @border_soft;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+messagedialog .titlebar,
+messagedialog label.title,
+dialog headerbar .title {
+    text-shadow: 0 0 3px @text;
+}
+
+messagedialog label,
+dialog label {
+    color: @text;
+}
+
+messagedialog label.dim-label,
+dialog label.dim-label {
+    color: @text_dim;
+}
+
+/* Buttons, like the ones on the color wheel */
+messagedialog .dialog-action-box,
+dialog .dialog-action-box {
+    border: none;
+    padding: 12px;
+}
+
+messagedialog button,
+dialog button {
+    background: transparent;
+    border: 1px solid @border;
+    border-radius: 0;
+    box-shadow: 0 0 3px @text, inset 0 0 3px @text;
+    color: @text;
+    margin: 0 3px;
+    padding: 6px 12px;
+    text-shadow: 0 0 3px @text;
+}
+
+messagedialog button:hover,
+dialog button:hover {
+    background-color: @bg_hover;
+}
+
+messagedialog button:active,
+dialog button:active,
+messagedialog button:checked,
+dialog button:checked {
+    background-color: @accent_hover;
+}
+
+messagedialog button.default,
+messagedialog button.suggested-action,
+dialog button.default,
+dialog button.suggested-action {
+    background-color: @neon;
+}
+
+messagedialog button.default label,
+messagedialog button.suggested-action label,
+dialog button.default label,
+dialog button.suggested-action label {
+    color: @bg;
+    text-shadow: none;
+}
+
+messagedialog button:disabled,
+dialog button:disabled {
+    background-color: transparent;
+    opacity: 0.3;
+}
+
+messagedialog button:disabled label,
+dialog button:disabled label {
+    color: @text;
+}
+
+/* Text fields and drop-downs */
+dialog entry,
+messagedialog entry,
+dialog combobox button.combo {
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid @border;
+    border-radius: 0;
+    box-shadow: none;
+    caret-color: @text;
+    color: @text;
+}
+
+dialog entry:focus,
+messagedialog entry:focus {
+    background-color: @bg_hover;
+    box-shadow: 0 0 3px @text, inset 0 0 3px @text;
+}
+
+dialog entry selection,
+messagedialog entry selection,
+messagedialog label selection,
+dialog label selection {
+    background-color: @neon;
+    color: @bg;
+}
+
+/* Tabs (file properties) */
+dialog notebook,
+dialog notebook > header,
+dialog notebook > stack {
+    background-color: @bg;
+    border-color: @border_soft;
+}
+
+dialog notebook > header tab {
+    color: @text_dim;
+}
+
+dialog notebook > header tab:checked {
+    box-shadow: inset 0 -2px @neon;
+    color: @text;
+    text-shadow: 0 0 3px @text;
+}
+
+/* Progress bars */
+progressbar trough {
+    background-color: @border_soft;
+    border: none;
+    border-radius: 0;
+    min-height: 4px;
+}
+
+progressbar progress {
+    background-color: @neon;
+    background-image: none;
+    border: none;
+    border-radius: 0;
+    box-shadow: 0 0 3px @text;
+    min-height: 4px;
+}
+
+/* Checkboxes and radio buttons: square, filled when on (like to-do-list) */
+dialog check,
+dialog radio,
+messagedialog check {
+    -gtk-icon-source: none;
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid @border;
+    border-radius: 0;
+    box-shadow: 0 0 3px @text;
+    min-height: 14px;
+    min-width: 14px;
+}
+
+dialog check:checked,
+dialog radio:checked,
+messagedialog check:checked {
+    background-color: @neon;
+    box-shadow: 0 0 3px @text, inset 0 0 0 3px @bg;
+}
+
+/* Open/save window */
+filechooser,
+filechooser placessidebar,
+filechooser placessidebar list,
+filechooser treeview,
+filechooser .view {
+    background-color: @bg;
+    color: @text;
+}
+
+filechooser placessidebar {
+    border-right: 1px solid @border_soft;
+}
+
+filechooser placessidebar row:selected,
+filechooser treeview:selected,
+filechooser .view:selected {
+    background-color: @bg_hover;
+    color: @text;
+    text-shadow: 0 0 3px @text;
+}
+
+filechooser treeview header button {
+    background-color: @bg;
+    border: none;
+    border-bottom: 1px solid @border_soft;
+    box-shadow: none;
+    color: @text_dim;
+    margin: 0;
+    text-shadow: none;
+}
+
+filechooser paned > separator {
+    background-color: transparent;
+    background-image: none;
+    border-left: 1px solid @border_soft;
+}
+
+filechooser .path-bar button {
+    box-shadow: none;
+    margin: 0 1px;
+    padding: 2px 8px;
+    text-shadow: none;
+}
+
+filechooser .path-bar button:checked {
+    background-color: @bg_hover;
+    box-shadow: 0 0 3px @text, inset 0 0 3px @text;
+    text-shadow: 0 0 3px @text;
+}
+
+dialog scrollbar {
+    background: transparent;
+    border: none;
+}
+
+dialog scrollbar slider {
+    background-color: @text;
+    border-radius: 0;
+    box-shadow: 0 0 3px @text;
+    min-height: 4px;
+    min-width: 4px;
+}
+
+/* ─── Thunar progress window ──────────────────────────────── */
+/* It has no class of its own, so every GTK window gets the theme's black
+   background (other apps keep their widgets, only the background changes) */
+window.background {
+    background-color: @bg;
+}
+
+/* Its texts and buttons are matched by its exact layout */
+window.background > box.vertical > box.vertical:only-child > box.vertical:only-child > box.vertical:only-child > box.horizontal label {
+    color: @text;
+    text-shadow: 0 0 3px @text;
+}
+
+window.background > box.vertical > box.vertical:only-child > box.vertical:only-child > box.vertical:only-child > box.horizontal > button.flat.image-button {
+    border: 1px solid @border;
+    border-radius: 0;
+    box-shadow: 0 0 3px @text, inset 0 0 3px @text;
+    color: @text;
+    margin-left: 6px;
+}
+
+window.background > box.vertical > box.vertical:only-child > box.vertical:only-child > box.vertical:only-child > box.horizontal > button.flat.image-button:hover {
+    background-color: @bg_hover;
+}
