@@ -12,9 +12,13 @@ cd ~/.cyberpunk-dotfiles
 
 Before copying anything, the installer backs up your current configs to `~/.dotfiles-backup-<date>`. It also renames your home folders to the system language (for example, `Pictures` becomes `Imagens` on a Portuguese system). A folder is left as is when one with the new name already exists.
 
+It also installs the **SDDM** login screen theme and enables SDDM, replacing any other display manager (GDM, LightDM…). The change takes effect on the next boot.
+
 ## Neon color
 
 The neon is white by default. To change it, press `SUPER + N` or click the palette icon on waybar and pick a color on the color wheel. The **Default** button goes back to white.
+
+The login screen follows the chosen color too.
 
 You can also apply a color from the terminal:
 
@@ -26,7 +30,7 @@ GTK apps that were already open (like Thunar) only change color after a restart.
 
 ## Languages
 
-The menus, waybar and the color wheel follow the system language. The available languages are the 10 most spoken in the world:
+The menus, waybar, the color wheel and the login screen follow the system language. The available languages are the 10 most spoken in the world:
 
 | Language | Native name | Code |
 | --- | --- | --- |

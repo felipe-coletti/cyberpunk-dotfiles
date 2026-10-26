@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# Applies the neon color to the whole theme (waybar, wofi, GTK, Hyprland and hyprlock)
+# Applies the neon color to the whole theme (waybar, wofi, GTK, Hyprland,
+# hyprlock and the SDDM login screen)
 # Usage: apply.sh [RRGGBB] [--no-reload]
 #   without a color: reapplies the saved color (or the default white)
 
@@ -52,6 +53,12 @@ cat > "$CONFIG_DIR/hypr/neon.conf" <<CONF
 \$neon_faint = rgba(${hex}40)
 \$neon_glow  = rgba(${hex}aa)
 CONF
+
+# Login screen: the installer makes this file writable by the user
+readonly SDDM_USER_CONF="/usr/share/sddm/themes/cyberpunk/theme.conf.user"
+if [[ -w "$SDDM_USER_CONF" ]]; then
+    printf '[General]\ncolor=#%s\n' "$hex" > "$SDDM_USER_CONF"
+fi
 
 # ─── Reload ─────────────────────────────────────────────────
 # wofi and hyprlock read the color when they open; GTK apps that are
