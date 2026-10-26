@@ -9,7 +9,7 @@ window.thunar {
 /* Barra de menus */
 window.thunar menubar {
     background-color: @bg;
-    border-bottom: 1px solid @border_soft;
+    border-bottom: 1px solid @border;
     color: @text;
 }
 
@@ -25,7 +25,7 @@ window.thunar menubar > menuitem:hover {
 window.thunar toolbar,
 window.thunar .toolbar {
     background-color: @bg_alt;
-    border-bottom: 1px solid @border_soft;
+    border-bottom: 1px solid @border;
     padding: 4px;
 }
 
@@ -84,20 +84,45 @@ window.thunar .sidebar .view:selected {
 
 window.thunar treeview header button {
     background-color: @bg_alt;
-    border-bottom: 1px solid @border_soft;
+    border-bottom: 1px solid @border;
     color: @text_dim;
 }
 
 /* Divisória e barra de status */
+/* A divisória é mais larga que a linha visível: fundo transparente e
+   só 1px de borda, senão sobra um bloco ao lado da barra de status */
 window.thunar paned > separator {
-    background-color: @border_soft;
+    background-color: transparent;
+    background-image: none;
+    border: none;
+    border-left: 1px solid @border;
     min-width: 1px;
 }
 
 window.thunar statusbar {
     background-color: @bg_alt;
-    border-top: 1px solid @border_soft;
+    border-top: 1px solid @border;
     color: @text_dim;
+    margin: 0;
+}
+
+/* Bordas que vêm do Adwaita. A moldura da área dos arquivos duplicaria as
+   linhas da divisória, da barra de ferramentas e da barra de status */
+window.thunar scrolledwindow,
+window.thunar scrolledwindow.frame,
+window.thunar frame > border {
+    border: none;
+}
+
+window.thunar notebook,
+window.thunar notebook > header,
+window.thunar notebook > stack {
+    border-color: @border;
+}
+
+window.thunar notebook > header {
+    background-color: @bg;
+    box-shadow: none;
 }
 
 window.thunar scrollbar {
