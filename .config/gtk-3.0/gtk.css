@@ -6,6 +6,21 @@ window.thunar {
     color: @text;
 }
 
+/* Barra de menus */
+window.thunar menubar {
+    background-color: @bg;
+    border-bottom: 1px solid @border_soft;
+    color: @text;
+}
+
+window.thunar menubar > menuitem {
+    color: @text;
+}
+
+window.thunar menubar > menuitem:hover {
+    background-color: @bg_hover;
+}
+
 /* Barra de ferramentas e caminho */
 window.thunar toolbar,
 window.thunar .toolbar {

@@ -1,11 +1,9 @@
-# cyberpunk-dotfiles
-
-Uma versão dos meus [dotfiles](https://github.com/felipe-coletti/dotfiles) para **Arch Linux + Hyprland** com visual cyberpunk: preto puro, branco neon e cantos retos, no mesmo design do [to-do-list](https://github.com/felipe-coletti/to-do-list).
+# Cyberpunk Dotfiles
 
 ## Instalação
 
 ```bash
-git clone https://github.com/felipe-coletti/cyberpunk-dotfiles ~/.cyberpunk-dotfiles
+git clone <repository-url> ~/.cyberpunk-dotfiles
 cd ~/.cyberpunk-dotfiles
 ./install.sh
 ```
