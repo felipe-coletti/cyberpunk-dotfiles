@@ -2,7 +2,6 @@
 width=400
 height=600
 location=center
-prompt=BUSCAR
 hide_scroll=true
 show=dmenu
 allow_markup=true

@@ -4,7 +4,7 @@ home = os.getenv("HOME")
 -- ─── Programas ───────────────────────────────────────────────
 terminal    = "foot"
 fileManager = "thunar"
-menu        = "wofi --show drun"
+menu        = home .. "/.config/wofi/scripts/launcher.sh"
 
 -- ─── Variáveis de ambiente ──────────────────────────────────
 hl.env("XCURSOR_SIZE",    "24")
