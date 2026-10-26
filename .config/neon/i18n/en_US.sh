@@ -1,0 +1,5 @@
+title="Neon color"
+brightness="Brightness"
+default="Default"
+cancel="Cancel"
+apply="Apply"

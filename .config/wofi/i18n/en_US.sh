@@ -1,0 +1,5 @@
+shutdown="Shut down"
+reboot="Reboot"
+lock="Lock"
+logout="Log out"
+prompt="Search"

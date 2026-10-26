@@ -1,0 +1,14 @@
+{
+    "network": {
+        "format-linked": "󰈁 {ifname} (No IP)"
+    },
+
+    "pulseaudio": {
+        "format-muted": "󰝟 Muted",
+        "tooltip-format": "{desc}\nScroll: adjust volume\nClick: mute/unmute"
+    },
+
+    "custom/brightness": {
+        "tooltip-format": "Monitor brightness\nScroll: adjust\nLeft click: 100%\nRight click: 0%"
+    }
+}

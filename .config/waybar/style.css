@@ -1,0 +1,102 @@
+@import url("../colors/palette.css");
+
+* {
+    all:unset;
+    font-family: "JetBrainsMono Nerd Font", "FiraCode Nerd Font", sans-serif;
+    font-size: 12px;
+}
+
+window#waybar {
+    background: @bg;
+    border-bottom: 1px solid @border;
+    box-shadow: 0 0 3px @text;
+    color: @text;
+    text-shadow: 0 0 3px @text;
+}
+
+#custom-shutdown, #custom-neon {
+    color: @text;
+    font-size: 16px;
+    margin: 2px 10px;
+}
+
+#custom-neon {
+    margin-left: 0;
+}
+
+#custom-shutdown:hover, #custom-neon:hover {
+    text-shadow: 0 0 6px @text;
+}
+
+#custom-vseparator {
+    color: @border_soft;
+    margin: 0 4px;
+    text-shadow: none;
+}
+
+#workspaces button {
+    background: transparent;
+    color: @text_dim;
+    padding: 2px 10px;
+    margin: 0 3px;
+    border: 1px solid @border_soft;
+    border-radius: 0;
+    text-shadow: none;
+}
+
+#workspaces button:hover {
+    background: @bg_hover;
+    box-shadow: none;
+    color: @text;
+}
+
+#workspaces button.active,
+#workspaces button.urgent {
+    background: @accent_hover;
+    border-color: @border;
+    box-shadow: 0 0 3px @text, inset 0 0 3px @text;
+    color: @text;
+    text-shadow: 0 0 3px @text;
+}
+
+#window.empty {
+    color: @text_dim;
+    font-style: italic;
+}
+
+#workspaces, #window {
+    margin: 6px 0;
+}
+
+#battery.critical {
+    font-weight: bold;
+}
+
+#network, #bluetooth, #pulseaudio, #custom-brightness, #battery, #clock {
+    margin-right: 10px;
+}
+
+/* Monocromático: estados de alerta ficam apagados ou com brilho extra */
+#pulseaudio.muted {
+    color: @text_dim;
+    text-shadow: none;
+}
+
+#battery.warning, #battery.critical {
+    text-shadow: 0 0 8px @text;
+}
+
+tooltip {
+    background-color: transparent;
+    border: none;
+}
+
+tooltip label {
+    background-color: @bg;
+    border: 1px solid @border;
+    border-radius: 0;
+    box-shadow: 0 0 3px @text, inset 0 0 3px @text;
+    color: @text;
+    padding: 6px 10px;
+    text-shadow: 0 0 3px @text;
+}

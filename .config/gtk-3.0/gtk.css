@@ -1,0 +1,115 @@
+@import url("../colors/palette.css");
+
+/* ─── Thunar ──────────────────────────────────────────────── */
+window.thunar {
+    background-color: @bg;
+    color: @text;
+}
+
+/* Barra de ferramentas e caminho */
+window.thunar toolbar,
+window.thunar .toolbar {
+    background-color: @bg_alt;
+    border-bottom: 1px solid @border_soft;
+    padding: 4px;
+}
+
+window.thunar button {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    color: @text_dim;
+}
+
+window.thunar button:hover,
+window.thunar button:checked {
+    background-color: @bg_hover;
+    color: @text;
+    text-shadow: 0 0 3px @text;
+}
+
+window.thunar entry {
+    background-color: @bg;
+    color: @text;
+    caret-color: @text;
+    border: 1px solid @border;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+window.thunar entry:focus {
+    background-color: @bg_hover;
+    box-shadow: 0 0 3px @text, inset 0 0 3px @text;
+}
+
+/* Painel lateral */
+window.thunar .sidebar,
+window.thunar .sidebar .view {
+    background-color: @bg_alt;
+    color: @text_dim;
+}
+
+/* Lista e ícones de arquivos */
+window.thunar .view,
+window.thunar treeview,
+window.thunar iconview {
+    background-color: @bg;
+    color: @text;
+}
+
+window.thunar .view:selected,
+window.thunar treeview:selected,
+window.thunar iconview:selected,
+window.thunar .sidebar .view:selected {
+    background-color: @bg_hover;
+    color: @text;
+    text-shadow: 0 0 3px @text;
+}
+
+window.thunar treeview header button {
+    background-color: @bg_alt;
+    border-bottom: 1px solid @border_soft;
+    color: @text_dim;
+}
+
+/* Divisória e barra de status */
+window.thunar paned > separator {
+    background-color: @border_soft;
+    min-width: 1px;
+}
+
+window.thunar statusbar {
+    background-color: @bg_alt;
+    border-top: 1px solid @border_soft;
+    color: @text_dim;
+}
+
+window.thunar scrollbar {
+    background: transparent;
+    border: none;
+}
+
+window.thunar scrollbar slider {
+    background-color: @text;
+    box-shadow: 0 0 3px @text;
+    border-radius: 0;
+    min-width: 4px;
+    min-height: 4px;
+}
+
+/* ─── Menus de contexto (todos os apps GTK) ──────────────── */
+menu,
+.menu,
+.context-menu {
+    background-color: @bg_alt;
+    border: 1px solid @border;
+    box-shadow: 0 0 3px @text, inset 0 0 3px @text;
+    color: @text;
+    padding: 4px 0;
+}
+
+menu menuitem:hover,
+.menu menuitem:hover {
+    background-color: @bg_hover;
+}

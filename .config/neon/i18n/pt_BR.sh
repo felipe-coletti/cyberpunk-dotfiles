@@ -1,0 +1,5 @@
+title="Cor do neon"
+brightness="Brilho"
+default="Padrão"
+cancel="Cancelar"
+apply="Aplicar"

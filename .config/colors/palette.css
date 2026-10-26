@@ -1,0 +1,17 @@
+/* Paleta neon */
+/* A cor do neon fica em neon.css, escolhida pela roda de cores (SUPER + N) */
+@import url("neon.css");
+
+@define-color bg #000000;
+@define-color bg_alt #000000;
+@define-color bg_soft alpha(#000000, 0.6);
+@define-color bg_hover alpha(@neon, 0.15);
+
+@define-color text @neon;
+@define-color text_dim alpha(@neon, 0.5);
+
+@define-color accent @neon;
+@define-color accent_hover alpha(@neon, 0.25);
+
+@define-color border @neon;
+@define-color border_soft alpha(@neon, 0.25);
