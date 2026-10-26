@@ -47,9 +47,10 @@ hl.bind(mod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 -- ─── Sessão ─────────────────────────────────────────────────
 hl.bind(mod .. " + L",         hl.dsp.exec_cmd("hyprlock"))
 
--- ─── Screenshot ─────────────────────────────────────────────
-hl.bind(mod .. " + PRINT",           hl.dsp.exec_cmd("grim ~/Pictures/screenshot-$(date +%Y%m%d-%H%M%S).png"))
-hl.bind(mod .. " + SHIFT + PRINT",   hl.dsp.exec_cmd("slurp | grim -g - ~/Pictures/screenshot-$(date +%Y%m%d-%H%M%S).png"))
+-- Salva na pasta de imagens do idioma do sistema (Imagens, Pictures…)
+local screenshot = '"$(xdg-user-dir PICTURES)/screenshot-$(date +%Y%m%d-%H%M%S).png"'
+hl.bind(mod .. " + PRINT",           hl.dsp.exec_cmd("grim " .. screenshot))
+hl.bind(mod .. " + SHIFT + PRINT",   hl.dsp.exec_cmd("slurp | grim -g - " .. screenshot))
 
 -- ─── Mídia e brilho ─────────────────────────────────────────
 local locked = { locked = true, repeating = true }
