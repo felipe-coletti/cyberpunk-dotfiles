@@ -1,0 +1,5 @@
+shutdown="Éteindre"
+reboot="Redémarrer"
+lock="Verrouiller"
+logout="Se déconnecter"
+prompt="Rechercher"

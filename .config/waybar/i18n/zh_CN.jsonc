@@ -1,0 +1,14 @@
+{
+    "network": {
+        "format-linked": "󰈁 {ifname} (无 IP)"
+    },
+
+    "pulseaudio": {
+        "format-muted": "󰝟 静音",
+        "tooltip-format": "{desc}\n滚动：调节音量\n点击：静音/取消静音"
+    },
+
+    "custom/brightness": {
+        "tooltip-format": "显示器亮度\n滚动：调节\n左键单击：100%\n右键单击：0%"
+    }
+}

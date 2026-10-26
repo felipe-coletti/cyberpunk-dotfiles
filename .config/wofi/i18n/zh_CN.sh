@@ -1,0 +1,5 @@
+shutdown="关机"
+reboot="重启"
+lock="锁定"
+logout="注销"
+prompt="搜索"

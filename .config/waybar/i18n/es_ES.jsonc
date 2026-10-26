@@ -1,0 +1,14 @@
+{
+    "network": {
+        "format-linked": "󰈁 {ifname} (sin IP)"
+    },
+
+    "pulseaudio": {
+        "format-muted": "󰝟 Silenciado",
+        "tooltip-format": "{desc}\nDesplazar: ajustar volumen\nClic: silenciar/activar"
+    },
+
+    "custom/brightness": {
+        "tooltip-format": "Brillo del monitor\nDesplazar: ajustar\nClic izquierdo: 100%\nClic derecho: 0%"
+    }
+}

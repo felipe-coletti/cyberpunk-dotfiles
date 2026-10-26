@@ -1,0 +1,14 @@
+{
+    "network": {
+        "format-linked": "󰈁 {ifname} (कोई IP नहीं)"
+    },
+
+    "pulseaudio": {
+        "format-muted": "󰝟 म्यूट",
+        "tooltip-format": "{desc}\nस्क्रॉल: आवाज़ बदलें\nक्लिक: म्यूट/अनम्यूट"
+    },
+
+    "custom/brightness": {
+        "tooltip-format": "मॉनिटर की चमक\nस्क्रॉल: बदलें\nबायाँ क्लिक: 100%\nदायाँ क्लिक: 0%"
+    }
+}

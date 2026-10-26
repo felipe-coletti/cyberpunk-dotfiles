@@ -1,0 +1,14 @@
+{
+    "network": {
+        "format-linked": "󰈁 {ifname} (কোনো IP নেই)"
+    },
+
+    "pulseaudio": {
+        "format-muted": "󰝟 নিঃশব্দ",
+        "tooltip-format": "{desc}\nস্ক্রল: ভলিউম ঠিক করুন\nক্লিক: নিঃশব্দ/শব্দ চালু"
+    },
+
+    "custom/brightness": {
+        "tooltip-format": "মনিটরের উজ্জ্বলতা\nস্ক্রল: ঠিক করুন\nবাম ক্লিক: 100%\nডান ক্লিক: 0%"
+    }
+}

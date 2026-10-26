@@ -1,0 +1,14 @@
+{
+    "network": {
+        "format-linked": "󰈁 {ifname} (pas d'IP)"
+    },
+
+    "pulseaudio": {
+        "format-muted": "󰝟 Muet",
+        "tooltip-format": "{desc}\nDéfiler : régler le volume\nClic : couper/rétablir le son"
+    },
+
+    "custom/brightness": {
+        "tooltip-format": "Luminosité de l'écran\nDéfiler : régler\nClic gauche : 100 %\nClic droit : 0 %"
+    }
+}

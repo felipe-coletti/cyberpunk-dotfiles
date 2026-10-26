@@ -1,0 +1,14 @@
+{
+    "network": {
+        "format-linked": "󰈁 {ifname} (нет IP)"
+    },
+
+    "pulseaudio": {
+        "format-muted": "󰝟 Без звука",
+        "tooltip-format": "{desc}\nПрокрутка: громкость\nЩелчок: выкл./вкл. звук"
+    },
+
+    "custom/brightness": {
+        "tooltip-format": "Яркость монитора\nПрокрутка: настроить\nЛевый щелчок: 100%\nПравый щелчок: 0%"
+    }
+}

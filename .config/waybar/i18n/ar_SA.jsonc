@@ -1,0 +1,14 @@
+{
+    "network": {
+        "format-linked": "󰈁 {ifname} (لا يوجد IP)"
+    },
+
+    "pulseaudio": {
+        "format-muted": "󰝟 صامت",
+        "tooltip-format": "{desc}\nالتمرير: ضبط مستوى الصوت\nالنقر: كتم/إلغاء الكتم"
+    },
+
+    "custom/brightness": {
+        "tooltip-format": "سطوع الشاشة\nالتمرير: ضبط\nالنقر الأيسر: 100%\nالنقر الأيمن: 0%"
+    }
+}
