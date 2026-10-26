@@ -1,6 +1,6 @@
 # Cyberpunk Dotfiles
 
-![Desktop com neon ciano](assets/screenshots/screenshot-cian.png)
+![Desktop with cyan neon](assets/screenshots/screenshot-cyan.png)
 ![The neon color changing across the whole theme](assets/gifs/neon.gif)
 
 ## Installation
