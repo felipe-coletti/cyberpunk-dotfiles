@@ -1,5 +1,7 @@
 # Cyberpunk Dotfiles
 
+![Desktop com neon ciano](screenshots/screenshot-cian.png)
+
 ## Instalação
 
 ```bash
