@@ -43,9 +43,10 @@ hl.config({
         enabled = true,
     },
 
-    -- General behavior
+    -- No default wallpaper or logo: the theme's pure black background
     misc = {
-        force_default_wallpaper = -1,
-        disable_hyprland_logo   = false,
+        force_default_wallpaper = 0,
+        disable_hyprland_logo   = true,
+        background_color        = 0xff000000,
     },
 })
