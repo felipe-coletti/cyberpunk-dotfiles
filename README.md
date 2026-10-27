@@ -3,6 +3,11 @@
 ![Desktop with cyan neon](assets/screenshots/screenshot-cyan.png)
 ![The neon color changing across the whole theme](assets/gifs/neon.gif)
 
+## Requirements
+
+- Arch Linux
+- Hyprland 0.56.2 or newer (the config uses Hyprland's Lua format)
+
 ## Installation
 
 ```bash
