@@ -19,7 +19,7 @@ It also installs the **SDDM** login screen theme and enables SDDM, replacing any
 
 The neon is white by default. To change it, press `SUPER + N` or click the palette icon on waybar and pick a color on the color wheel. The **Default** button goes back to white.
 
-The login screen follows the chosen color too.
+The login screen, the terminal and Neovim follow the chosen color too.
 
 You can also apply a color from the terminal:
 
@@ -27,7 +27,17 @@ You can also apply a color from the terminal:
 ~/.config/neon/apply.sh 00ffcc
 ```
 
-GTK apps that were already open (like Thunar) only change color after a restart.
+GTK apps that were already open (like Thunar) only change color after a restart. Open terminals and Neovim windows change right away.
+
+## Terminal and Neovim
+
+The [foot](https://codeberg.org/dnkl/foot) terminal uses the neon for the text, the cursor and the selection. The other terminal colors are neon versions of the usual ones, so errors, diffs and file types stay easy to tell apart.
+
+The `cyberpunk` Neovim colorscheme is monochrome, like the rest of the theme: code is told apart by brightness and style, and color is only used for errors, warnings and diffs. The installer only adds the colorscheme, so your Neovim config is kept. If you don't have one, it creates a minimal config that uses the theme. To use it in your own config:
+
+```lua
+vim.cmd.colorscheme("cyberpunk")
+```
 
 ## Keybindings
 

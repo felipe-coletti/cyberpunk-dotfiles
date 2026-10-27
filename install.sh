@@ -26,7 +26,7 @@ readonly PKGS=(
     ttf-jetbrains-mono-nerd ttf-font-awesome git rsync
     papirus-icon-theme noto-fonts-emoji
     noto-fonts noto-fonts-cjk
-    hyprlock qt5-wayland qt6-wayland dconf sddm
+    hyprlock qt5-wayland qt6-wayland dconf sddm neovim
     python-gobject python-cairo gtk3 xdg-user-dirs
 )
 
@@ -115,7 +115,28 @@ copy_config() {
     done
 }
 
-# ─── 5. Home folders in the system language ─────────────────
+# ─── 5. Neovim colorscheme ──────────────────────────────────
+install_nvim_theme() {
+    section "Neovim colorscheme"
+
+    # Only the colorscheme is copied, so an existing Neovim config is kept
+    local nvim_dir="$CONFIG_DIR/nvim"
+    mkdir -p "$nvim_dir/colors"
+    cp "$REPO_DIR/.config/nvim/colors/cyberpunk.lua" "$nvim_dir/colors/"
+    ok "Colorscheme installed: $nvim_dir/colors/cyberpunk.lua"
+
+    if [[ ! -e "$nvim_dir/init.lua" && ! -e "$nvim_dir/init.vim" ]]; then
+        cp "$REPO_DIR/.config/nvim/init.lua" "$nvim_dir/init.lua"
+        ok "Minimal Neovim config created with the theme."
+    elif grep -qs "cyberpunk" "$nvim_dir/init.lua" "$nvim_dir/init.vim"; then
+        ok "Your Neovim config already uses the theme."
+    else
+        warn "Your Neovim config was kept. To use the theme, add to it:"
+        log "  ${BLUE}vim.cmd.colorscheme(\"cyberpunk\")${NC}"
+    fi
+}
+
+# ─── 6. Home folders in the system language ─────────────────
 setup_user_dirs() {
     section "Home folders in the system language"
 
@@ -168,7 +189,7 @@ setup_user_dirs() {
     ok "Home folders set up."
 }
 
-# ─── 6. Login screen (SDDM) ─────────────────────────────────
+# ─── 7. Login screen (SDDM) ─────────────────────────────────
 install_sddm() {
     section "Login screen (SDDM)"
 
@@ -214,7 +235,7 @@ install_sddm() {
     fi
 }
 
-# ─── 7. Final touches ───────────────────────────────────────
+# ─── 8. Final touches ───────────────────────────────────────
 post_install() {
     section "Final touches"
 
@@ -251,7 +272,7 @@ post_install() {
     ok "Installation complete."
 }
 
-# ─── 8. Summary ─────────────────────────────────────────────
+# ─── 9. Summary ─────────────────────────────────────────────
 summary() {
     log "\n${GREEN}════════════════════════════════════${NC}"
     log "${GREEN}  Dotfiles installed successfully!  ${NC}"
@@ -275,6 +296,7 @@ main() {
     install_packages
     backup_existing
     copy_config
+    install_nvim_theme
     setup_user_dirs
     install_sddm
     post_install
