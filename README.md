@@ -1,12 +1,19 @@
 # Cyberpunk Dotfiles
 
-![Desktop with cyan neon](assets/screenshots/screenshot-cyan.png)
 ![The neon color changing across the whole theme](assets/gifs/neon.gif)
 
 ## Requirements
 
 - Arch Linux
 - Hyprland 0.56.2 or newer (the config uses Hyprland's Lua format)
+
+## Screenshots
+
+![Desktop with waybar, Thunar and the power menu](assets/screenshots/desktop.png)
+
+![The foot terminal and the Neovim colorscheme](assets/screenshots/terminal-neovim.png)
+
+![The SDDM login screen](assets/screenshots/login.png)
 
 ## Installation
 
@@ -51,7 +58,7 @@ Waybar shows the weather next to the clock, from [Open-Meteo](https://open-meteo
 To set the city yourself, for example when you use a VPN, **right click the weather** and type the city. Choose **Automatic** in the same menu to go back to the location of your IP. You can also set it in `~/.config/waybar/weather.conf`:
 
 ```bash
-city="São Paulo"
+city="New York"
 units="metric"    # or "imperial" for °F and mph; empty follows your country
 ```
 
