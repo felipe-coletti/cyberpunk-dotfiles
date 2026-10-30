@@ -27,7 +27,7 @@ readonly PKGS=(
     papirus-icon-theme noto-fonts-emoji
     noto-fonts noto-fonts-cjk
     hyprlock qt5-wayland qt6-wayland dconf sddm neovim
-    python-gobject python-cairo gtk3 xdg-user-dirs
+    python-gobject python-cairo gtk3 xdg-user-dirs jq
 )
 
 # ─── 1. Check prerequisites ──────────────────────────────────
@@ -102,17 +102,24 @@ copy_config() {
             # Sync in place (without deleting the folder) so Hyprland's
             # autoreload never finds the config missing halfway through.
             # Generated or personal files are left out (waybar language,
-            # Thunar/GTK bookmarks, chosen neon color)
+            # Thunar/GTK bookmarks, chosen neon color, weather city)
             rsync -a --delete \
                 --exclude "i18n/current.jsonc" \
                 --exclude "/bookmarks" \
                 --exclude "/color" \
+                --exclude "/weather.conf" \
                 "$src/" "$dst/"
             ok "Copied: $dir"
         else
             warn "Folder not found: $src"
         fi
     done
+
+    # The weather city is kept on reinstall; the default one (empty, so the
+    # location comes from the IP) is only copied the first time
+    if [[ ! -f "$CONFIG_DIR/waybar/weather.conf" ]]; then
+        cp "$REPO_DIR/.config/waybar/weather.conf" "$CONFIG_DIR/waybar/weather.conf"
+    fi
 }
 
 # ─── 5. Neovim colorscheme ──────────────────────────────────

@@ -44,6 +44,19 @@ The `cyberpunk` Neovim colorscheme is monochrome, like the rest of the theme: co
 vim.cmd.colorscheme("cyberpunk")
 ```
 
+## Weather
+
+Waybar shows the weather next to the clock, from [Open-Meteo](https://open-meteo.com) (free, no account or API key). It works out of the box: the location comes from your IP, looked up on [ipinfo.io](https://ipinfo.io), and the units follow your country (°F in the US, °C elsewhere).
+
+To set the city yourself, for example when you use a VPN, **right click the weather** and type the city. Choose **Automatic** in the same menu to go back to the location of your IP. You can also set it in `~/.config/waybar/weather.conf`:
+
+```bash
+city="São Paulo"
+units="metric"    # or "imperial" for °F and mph; empty follows your country
+```
+
+Hover over it for details, and click it to refresh the weather and look up the location again. It updates every 15 minutes, and shows the last weather it got while offline. Your IP is sent to ipinfo.io to find the location (unless you set a city), and the coordinates to Open-Meteo to get the forecast.
+
 ## Keybindings
 
 `SUPER` is the Windows key.

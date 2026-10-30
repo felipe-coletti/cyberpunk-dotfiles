@@ -72,7 +72,7 @@ window#waybar {
     font-weight: bold;
 }
 
-#network, #bluetooth, #pulseaudio, #custom-brightness, #battery, #clock {
+#network, #bluetooth, #pulseaudio, #custom-brightness, #battery, #custom-weather, #clock {
     margin-right: 10px;
 }
 
