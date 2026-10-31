@@ -10,5 +10,10 @@
 
     "custom/brightness": {
         "tooltip-format": "Brilho do monitor\nRolar: ajustar\nClique esquerdo: 100%\nClique direito: 0%"
+    },
+
+    "clock": {
+        "format": "{:%H:%M\n%d/%m/%Y}",
+        "format-alt": "{:L%H:%M\n%a, %d/%m/%Y}"
     }
 }

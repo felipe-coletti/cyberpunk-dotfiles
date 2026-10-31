@@ -10,5 +10,10 @@
 
     "custom/brightness": {
         "tooltip-format": "Яркость монитора\nПрокрутка: настроить\nЛевый щелчок: 100%\nПравый щелчок: 0%"
+    },
+
+    "clock": {
+        "format": "{:%H:%M\n%d/%m/%Y}",
+        "format-alt": "{:L%H:%M\n%a, %d/%m/%Y}"
     }
 }

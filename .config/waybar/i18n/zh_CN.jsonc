@@ -10,5 +10,10 @@
 
     "custom/brightness": {
         "tooltip-format": "显示器亮度\n滚动：调节\n左键单击：100%\n右键单击：0%"
+    },
+
+    "clock": {
+        "format": "{:%H:%M\n%Y/%m/%d}",
+        "format-alt": "{:L%H:%M\n%Y/%m/%d %A}"
     }
 }

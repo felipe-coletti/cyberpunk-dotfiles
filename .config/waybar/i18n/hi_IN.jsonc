@@ -10,5 +10,10 @@
 
     "custom/brightness": {
         "tooltip-format": "मॉनिटर की चमक\nस्क्रॉल: बदलें\nबायाँ क्लिक: 100%\nदायाँ क्लिक: 0%"
+    },
+
+    "clock": {
+        "format": "{:%H:%M\n%d/%m/%Y}",
+        "format-alt": "{:L%H:%M\n%a, %d/%m/%Y}"
     }
 }

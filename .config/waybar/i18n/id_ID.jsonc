@@ -10,5 +10,10 @@
 
     "custom/brightness": {
         "tooltip-format": "Kecerahan monitor\nGulir: atur\nKlik kiri: 100%\nKlik kanan: 0%"
+    },
+
+    "clock": {
+        "format": "{:%H:%M\n%d/%m/%Y}",
+        "format-alt": "{:L%H:%M\n%a, %d/%m/%Y}"
     }
 }

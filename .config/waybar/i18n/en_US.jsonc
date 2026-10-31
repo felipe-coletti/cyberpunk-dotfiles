@@ -10,5 +10,10 @@
 
     "custom/brightness": {
         "tooltip-format": "Monitor brightness\nScroll: adjust\nLeft click: 100%\nRight click: 0%"
+    },
+
+    "clock": {
+        "format": "{:%H:%M\n%m/%d/%Y}",
+        "format-alt": "{:L%H:%M\n%a, %m/%d/%Y}"
     }
 }

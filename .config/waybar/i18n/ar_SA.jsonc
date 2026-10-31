@@ -10,5 +10,10 @@
 
     "custom/brightness": {
         "tooltip-format": "سطوع الشاشة\nالتمرير: ضبط\nالنقر الأيسر: 100%\nالنقر الأيمن: 0%"
+    },
+
+    "clock": {
+        "format": "{:%H:%M\n%d/%m/%Y}",
+        "format-alt": "{:L%H:%M\n%A، %d/%m/%Y}"
     }
 }
