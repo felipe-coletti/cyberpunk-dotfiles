@@ -1,0 +1,5 @@
+@import url("../common/base.css");
+
+/* Cover, or the music icon when there is none */
+.cover { border: 1px solid @text_dim; }
+.big-icon { font-size: 32px; }

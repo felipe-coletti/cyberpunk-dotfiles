@@ -27,7 +27,7 @@ readonly PKGS=(
     papirus-icon-theme noto-fonts-emoji
     noto-fonts noto-fonts-cjk
     hyprlock qt5-wayland qt6-wayland dconf sddm neovim
-    python-gobject python-cairo gtk3 xdg-user-dirs jq
+    python-gobject python-cairo gtk3 xdg-user-dirs jq gtk-layer-shell
 )
 
 # ─── 1. Check prerequisites ──────────────────────────────────
@@ -71,7 +71,7 @@ backup_existing() {
     section "Backing up existing configs"
 
     local has_backup=false
-    for dir in hypr waybar foot mako wofi hyprpaper colors dotfiles gtk-3.0 neon; do
+    for dir in hypr waybar foot mako wofi hyprpaper colors dotfiles gtk-3.0 neon widgets; do
         local target="$CONFIG_DIR/$dir"
         if [[ -e "$target" ]]; then
             mkdir -p "$BACKUP_DIR"
@@ -94,7 +94,7 @@ copy_config() {
 
     mkdir -p "$CONFIG_DIR"
 
-    for dir in hypr waybar foot mako wofi hyprpaper colors dotfiles gtk-3.0 neon; do
+    for dir in hypr waybar foot mako wofi hyprpaper colors dotfiles gtk-3.0 neon widgets; do
         local src="$REPO_DIR/.config/$dir"
         local dst="$CONFIG_DIR/$dir"
 

@@ -1,0 +1,14 @@
+@import url("../common/base.css");
+
+/* Checkbox like the to-do-list: a square, filled when done */
+.check {
+    border: 1px solid @border;
+    box-shadow: 0 0 3px @neon;
+    min-height: 14px;
+    min-width: 14px;
+    padding: 0;
+}
+.check.done {
+    background-color: @neon;
+    box-shadow: 0 0 3px @neon, inset 0 0 0 3px @bg;
+}
