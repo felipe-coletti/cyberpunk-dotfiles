@@ -39,11 +39,13 @@ You can also apply a color from the terminal:
 ~/.config/neon/apply.sh 00ffcc
 ```
 
-GTK apps that were already open (like Thunar) only change color after a restart. Open terminals and Neovim windows change right away.
+GTK apps that were already open (like Thunar) only change color after a restart. Open terminals, yazi and Neovim windows change right away.
 
-## Terminal and Neovim
+## Terminal, yazi and Neovim
 
 The [kitty](https://sw.kovidgoyal.net/kitty/) terminal uses the neon for the text, the cursor (which leaves a short trail when it jumps) and the selection. The other terminal colors are neon versions of the usual ones, so errors, diffs and file types stay easy to tell apart.
+
+[yazi](https://yazi-rs.github.io) is the terminal file manager, next to Thunar: press `SUPER + SHIFT + E`, or run `yazi` in the terminal. Folders are in the neon and files are colored by type, with image, video and PDF previews. Its theme only uses the terminal colors, so it follows the neon too.
 
 The `cyberpunk` Neovim colorscheme is monochrome, like the rest of the theme: code is told apart by brightness and style, and color is only used for errors, warnings and diffs. The installer only adds the colorscheme, so your Neovim config is kept. If you don't have one, it creates a minimal config that uses the theme. To use it in your own config:
 
@@ -82,6 +84,7 @@ They start with Hyprland. To restart them, run `~/.config/widgets/start.sh`; to 
 | `SUPER + Return` | Open the terminal (kitty) |
 | `SUPER + D` | Open the app launcher |
 | `SUPER + E` | Open the file manager (Thunar) |
+| `SUPER + SHIFT + E` | Open the terminal file manager (yazi) |
 | `SUPER + N` | Pick the neon color |
 | `SUPER + Q` | Close the window (with no window open: power menu) |
 | `SUPER + L` | Lock the screen |

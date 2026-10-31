@@ -1,0 +1,8 @@
+# yazi, the terminal file manager (SUPER + SHIFT + E)
+# Only the changes from the defaults: https://yazi-rs.github.io/docs/configuration/yazi
+
+[mgr]
+ratio          = [ 1, 3, 4 ]
+sort_by        = "natural"
+sort_dir_first = true
+linemode       = "size"

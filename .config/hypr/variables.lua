@@ -4,6 +4,7 @@ home = os.getenv("HOME")
 -- ─── Programs ────────────────────────────────────────────────
 terminal    = "kitty"
 fileManager = "thunar"
+fileManagerTui = terminal .. " -e yazi"
 menu        = home .. "/.config/wofi/scripts/launcher.sh"
 
 -- ─── Environment variables ──────────────────────────────────

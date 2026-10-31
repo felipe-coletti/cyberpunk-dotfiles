@@ -1,0 +1,180 @@
+# Neon theme for yazi. It only uses the terminal's 16 colors, so it follows
+# the neon that ~/.config/neon/apply.sh sets in kitty, live:
+#   white    = the neon
+#   gray     = the neon at 75%
+#   darkgray = the neon at 40%
+#   black    = the background
+# red, green, yellow... are the same accents as in the terminal, used only
+# for file types, permissions and warnings
+
+[mgr]
+cwd            = { fg = "white", bold = true }
+find_keyword   = { fg = "black", bg = "white", bold = true }
+find_position  = { fg = "white", bold = true }
+symlink_target = { fg = "gray", italic = true }
+count_copied   = { fg = "black", bg = "green" }
+count_cut      = { fg = "black", bg = "red" }
+count_selected = { fg = "black", bg = "white" }
+border_symbol  = "│"
+border_style   = { fg = "darkgray" }
+
+[tabs]
+active    = { fg = "black", bg = "white", bold = true }
+inactive  = { fg = "gray" }
+sep_inner = { open = "", close = "" }
+sep_outer = { open = "", close = "" }
+
+[mode]
+normal_main = { fg = "black", bg = "white", bold = true }
+normal_alt  = { fg = "white" }
+select_main = { fg = "black", bg = "red", bold = true }
+select_alt  = { fg = "red" }
+unset_main  = { fg = "black", bg = "red", bold = true }
+unset_alt   = { fg = "red" }
+
+# The hovered file: neon background, like the selection in the terminal
+[indicator]
+current = { fg = "black", bg = "white" }
+preview = { fg = "black", bg = "gray" }
+padding = { open = "", close = "" }
+
+[status]
+sep_left        = { open = "", close = "" }
+sep_right       = { open = "", close = "" }
+perm_sep        = { fg = "darkgray" }
+perm_type       = { fg = "white" }
+perm_read       = { fg = "gray" }
+perm_write      = { fg = "gray" }
+perm_exec       = { fg = "gray" }
+progress_label  = { fg = "white", bold = true }
+progress_normal = { fg = "white", bg = "black" }
+progress_error  = { fg = "red", bg = "black" }
+
+[which]
+mask            = { bg = "black" }
+cand            = { fg = "white", bold = true }
+rest            = { fg = "darkgray" }
+desc            = { fg = "gray" }
+separator_style = { fg = "darkgray" }
+
+[confirm]
+border  = { fg = "white" }
+title   = { fg = "white", bold = true }
+btn_yes = { fg = "black", bg = "white" }
+btn_no  = { fg = "white" }
+
+[spot]
+border   = { fg = "white" }
+title    = { fg = "white", bold = true }
+tbl_col  = { fg = "white" }
+tbl_cell = { fg = "black", bg = "white" }
+
+[pick]
+border   = { fg = "white" }
+active   = { fg = "black", bg = "white" }
+inactive = { fg = "gray" }
+
+[input]
+border   = { fg = "white" }
+title    = { fg = "white", bold = true }
+value    = { fg = "white" }
+selected = { fg = "black", bg = "white" }
+
+[cmp]
+border   = { fg = "white" }
+active   = { fg = "black", bg = "white" }
+inactive = { fg = "gray" }
+
+[tasks]
+border  = { fg = "white" }
+title   = { fg = "white", bold = true }
+hovered = { fg = "black", bg = "white" }
+
+[help]
+on      = { fg = "white", bold = true }
+run     = { fg = "gray" }
+desc    = { fg = "gray" }
+hovered = { fg = "black", bg = "white" }
+footer  = { fg = "black", bg = "white" }
+
+[notify]
+title_info  = { fg = "white" }
+title_warn  = { fg = "yellow" }
+title_error = { fg = "red" }
+
+# Folders in the neon; files by type, with the terminal's accents
+[filetype]
+rules = [
+	{ mime = "image/*", fg = "yellow" },
+	{ mime = "{audio,video}/*", fg = "magenta" },
+	{ mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", fg = "red" },
+	{ mime = "application/{pdf,doc,rtf}", fg = "cyan" },
+	{ mime = "vfs/{absent,stale}", fg = "darkgray" },
+	{ url = "*", is = "orphan", fg = "red", underline = true },
+	{ url = "*", is = "exec", fg = "green" },
+	{ url = "*", is = "dummy", fg = "red", underline = true },
+	{ url = "*/", is = "dummy", fg = "red", underline = true },
+	{ url = "*/", fg = "white", bold = true },
+	{ url = "*", fg = "gray" },
+]
+
+# Icons without colors of their own: they take the color of the file name
+[icon]
+globs = []
+dirs  = [
+	{ name = ".config", text = "" },
+	{ name = ".git", text = "" },
+	{ name = "Desktop", text = "" },
+	{ name = "Documents", text = "" },
+	{ name = "Downloads", text = "" },
+	{ name = "Music", text = "" },
+	{ name = "Pictures", text = "" },
+	{ name = "Videos", text = "" },
+]
+files = [
+	{ name = ".gitignore", text = "" },
+]
+exts  = [
+	{ name = "md", text = "" },
+	{ name = "txt", text = "󰈙" },
+	{ name = "pdf", text = "" },
+	{ name = "sh", text = "" },
+	{ name = "lua", text = "" },
+	{ name = "py", text = "" },
+	{ name = "js", text = "" },
+	{ name = "ts", text = "" },
+	{ name = "json", text = "" },
+	{ name = "toml", text = "" },
+	{ name = "conf", text = "" },
+	{ name = "css", text = "" },
+	{ name = "html", text = "" },
+	{ name = "qml", text = "" },
+	{ name = "rs", text = "" },
+	{ name = "c", text = "" },
+	{ name = "go", text = "" },
+	{ name = "png", text = "" },
+	{ name = "jpg", text = "" },
+	{ name = "gif", text = "" },
+	{ name = "svg", text = "󰜡" },
+	{ name = "mp3", text = "" },
+	{ name = "flac", text = "" },
+	{ name = "mp4", text = "" },
+	{ name = "mkv", text = "" },
+	{ name = "zip", text = "" },
+	{ name = "gz", text = "" },
+	{ name = "7z", text = "" },
+]
+conds = [
+	{ if = "orphan", text = "" },
+	{ if = "link", text = "" },
+	{ if = "block", text = "" },
+	{ if = "char", text = "" },
+	{ if = "fifo", text = "" },
+	{ if = "sock", text = "" },
+	{ if = "sticky", text = "" },
+	{ if = "dummy", text = "" },
+	{ if = "dir & hovered", text = "" },
+	{ if = "dir", text = "" },
+	{ if = "exec", text = "" },
+	{ if = "!dir", text = "" },
+]

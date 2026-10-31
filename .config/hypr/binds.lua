@@ -4,6 +4,7 @@ local mod = "SUPER"
 hl.bind(mod .. " + Return",    hl.dsp.exec_cmd(terminal))
 hl.bind(mod .. " + D",         hl.dsp.exec_cmd(menu))
 hl.bind(mod .. " + E",         hl.dsp.exec_cmd(fileManager))
+hl.bind(mod .. " + SHIFT + E", hl.dsp.exec_cmd(fileManagerTui))
 hl.bind(mod .. " + N",         hl.dsp.exec_cmd(home .. "/.config/neon/pick.sh"))   -- neon color
 
 -- ─── Windows ────────────────────────────────────────────────
