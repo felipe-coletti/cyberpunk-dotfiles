@@ -34,7 +34,7 @@ local c = {
     line    = shade(25),
     surface = shade(12),
 
-    -- Same accents as the foot terminal
+    -- Same accents as the kitty terminal
     red     = "#ff2a6d",
     green   = "#05ffa1",
     yellow  = "#ffd300",
@@ -170,7 +170,7 @@ for name, spec in pairs(groups) do
     vim.api.nvim_set_hl(0, name, spec)
 end
 
--- Neovim's own terminal uses the same 16 colors as foot
+-- Neovim's own terminal uses the same 16 colors as kitty
 local terminal = {
     "#000000", c.red, c.green, c.yellow, c.blue, c.magenta, c.cyan, shade(75),
     c.faint,   c.red, c.green, c.yellow, c.blue, c.magenta, c.cyan, c.neon,

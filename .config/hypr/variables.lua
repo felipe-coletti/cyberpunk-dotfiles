@@ -2,7 +2,7 @@
 home = os.getenv("HOME")
 
 -- ─── Programs ────────────────────────────────────────────────
-terminal    = "foot"
+terminal    = "kitty"
 fileManager = "thunar"
 menu        = home .. "/.config/wofi/scripts/launcher.sh"
 

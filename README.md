@@ -11,7 +11,7 @@
 
 ![Desktop with waybar, Thunar and the power menu](assets/screenshots/desktop.png)
 
-![The foot terminal and the Neovim colorscheme](assets/screenshots/terminal-neovim.png)
+![The kitty terminal and the Neovim colorscheme](assets/screenshots/terminal-neovim.png)
 
 ![The SDDM login screen](assets/screenshots/login.png)
 
@@ -43,7 +43,7 @@ GTK apps that were already open (like Thunar) only change color after a restart.
 
 ## Terminal and Neovim
 
-The [foot](https://codeberg.org/dnkl/foot) terminal uses the neon for the text, the cursor and the selection. The other terminal colors are neon versions of the usual ones, so errors, diffs and file types stay easy to tell apart.
+The [kitty](https://sw.kovidgoyal.net/kitty/) terminal uses the neon for the text, the cursor (which leaves a short trail when it jumps) and the selection. The other terminal colors are neon versions of the usual ones, so errors, diffs and file types stay easy to tell apart.
 
 The `cyberpunk` Neovim colorscheme is monochrome, like the rest of the theme: code is told apart by brightness and style, and color is only used for errors, warnings and diffs. The installer only adds the colorscheme, so your Neovim config is kept. If you don't have one, it creates a minimal config that uses the theme. To use it in your own config:
 
@@ -79,7 +79,7 @@ They start with Hyprland. To restart them, run `~/.config/widgets/start.sh`; to 
 
 | Keys | Action |
 | --- | --- |
-| `SUPER + Return` | Open the terminal (foot) |
+| `SUPER + Return` | Open the terminal (kitty) |
 | `SUPER + D` | Open the app launcher |
 | `SUPER + E` | Open the file manager (Thunar) |
 | `SUPER + N` | Pick the neon color |
