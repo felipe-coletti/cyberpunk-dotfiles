@@ -2,14 +2,12 @@
 
 # --- CONFIGURATION ---
 STEP=5
-STATE_FILE_PREFIX="/tmp/waybar_brightness"
+STATE_FILE_PREFIX="/tmp/quickshell_brightness"
 # ---------------------
 
 get_monitor_name() {
     if [ -n "$1" ]; then
         echo "$1"
-    elif [ -n "$WAYBAR_OUTPUT_NAME" ]; then
-        echo "$WAYBAR_OUTPUT_NAME"
     else
         hyprctl monitors -j | jq -r '.[] | select(.focused == true) | .name'
     fi
@@ -19,10 +17,10 @@ get_ddcutil_display() {
     local monitor_name="$1"
     case "$monitor_name" in
         "DP-7")
-            echo "1"  # Adjust to match your 'ddcutil detect' output
+            echo "1"  # Ajuste conforme sua saída em 'ddcutil detect'
             ;;
         *)
-            echo ""  # No DDC/CI support
+            echo ""  # Sem suporte DDC/CI
             ;;
     esac
 }
@@ -81,7 +79,6 @@ set_brightness() {
         pkill -f "ddcutil.*setvcp 10" 2>/dev/null
         (ddcutil --display "$display_num" setvcp 10 "$new_brightness") &
     fi
-    pkill -RTMIN+8 waybar
 }   
 
 COMMAND="$1"
@@ -92,6 +89,7 @@ step=$((max * STEP / 100))
 
 case "$COMMAND" in
     "get")
+        [ "$current" = "?" ] && exit 0
         percent=$((current * 100 / max))
         echo "$percent"
         ;;

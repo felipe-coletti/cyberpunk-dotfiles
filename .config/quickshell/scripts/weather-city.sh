@@ -4,10 +4,10 @@
 # the location of the IP
 
 source "$HOME/.config/dotfiles/lang.sh"
-source "$(resolve_lang "$HOME/.config/waybar/i18n/weather" sh)"
+source "$(resolve_lang "$HOME/.config/quickshell/i18n/weather" sh)"
 
-readonly CONF="$HOME/.config/waybar/weather.conf"
-readonly SCRIPTS="$HOME/.config/waybar/scripts"
+readonly CONF="$HOME/.config/quickshell/weather.conf"
+readonly SCRIPTS="$HOME/.config/quickshell/scripts"
 
 city=""
 units=""
@@ -28,7 +28,7 @@ fi
 # Rewrites weather.conf with the new city, keeping the chosen units
 {
     printf '# Leave city empty to use the location of your IP, or right click the\n'
-    printf '# weather on waybar to set it from a menu\n'
+    printf '# weather on the bar to set it from a menu\n'
     printf 'city=%q\n' "$city"
     printf '\n# metric (°C, km/h) or imperial (°F, mph); empty follows your country\n'
     printf 'units=%q\n' "$units"

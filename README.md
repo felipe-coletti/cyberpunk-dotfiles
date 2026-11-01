@@ -6,10 +6,11 @@
 
 - Arch Linux
 - Hyprland 0.56.2 or newer (the config uses Hyprland's Lua format)
+- [Quickshell](https://quickshell.org), for the bar. It's on the AUR: the installer gets it with `yay` or `paru`; without either, install it yourself first
 
 ## Screenshots
 
-![Desktop with waybar, Thunar and the power menu](assets/screenshots/desktop.png)
+![Desktop with the bar, Thunar and the power menu](assets/screenshots/desktop.png)
 
 ![The kitty terminal and the Neovim colorscheme](assets/screenshots/terminal-neovim.png)
 
@@ -29,7 +30,7 @@ It also installs the **SDDM** login screen theme and enables SDDM, replacing any
 
 ## Neon color
 
-The neon is white by default. To change it, press `SUPER + N` or click the palette icon on waybar and pick a color on the color wheel. The **Default** button goes back to white.
+The neon is white by default. To change it, press `SUPER + N` or click the palette icon on the bar and pick a color on the color wheel. The **Default** button goes back to white.
 
 The login screen, the terminal and Neovim follow the chosen color too.
 
@@ -55,9 +56,9 @@ vim.cmd.colorscheme("cyberpunk")
 
 ## Weather
 
-Waybar shows the weather next to the clock, from [Open-Meteo](https://open-meteo.com) (free, no account or API key). It works out of the box: the location comes from your IP, looked up on [ipinfo.io](https://ipinfo.io), and the units follow your country (°F in the US, °C elsewhere).
+The bar shows the weather next to the clock, from [Open-Meteo](https://open-meteo.com) (free, no account or API key). It works out of the box: the location comes from your IP, looked up on [ipinfo.io](https://ipinfo.io), and the units follow your country (°F in the US, °C elsewhere).
 
-To set the city yourself, for example when you use a VPN, **right click the weather** and type the city. Choose **Automatic** in the same menu to go back to the location of your IP. You can also set it in `~/.config/waybar/weather.conf`:
+To set the city yourself, for example when you use a VPN, **right click the weather** and type the city. Choose **Automatic** in the same menu to go back to the location of your IP. You can also set it in `~/.config/quickshell/weather.conf`:
 
 ```bash
 city="New York"
@@ -107,7 +108,7 @@ Screenshots are saved to your pictures folder. The media, volume and brightness 
 
 ## Languages
 
-The menus, waybar, the color wheel and the login screen follow the system language. The available languages are the 10 most spoken in the world:
+The menus, the bar, the color wheel and the login screen follow the system language. The available languages are the 10 most spoken in the world:
 
 | Language | Native name | Code |
 | --- | --- | --- |

@@ -1,20 +1,18 @@
 #!/usr/bin/env bash
-# Weather for waybar, from Open-Meteo (no account or API key needed)
+# Weather for the bar, from Open-Meteo (no account or API key needed)
 # The location comes from your IP (looked up on ipinfo.io), or from the city
-# in ~/.config/waybar/weather.conf when it's set. Offline, it shows the last
+# in ~/.config/quickshell/weather.conf when it's set. Offline, it shows the last
 # weather it got
-# Usage: weather.sh            prints the module as JSON for waybar
-#        weather.sh refresh    looks up the location again and updates the
-#                              module now (on click)
+# Usage: weather.sh            prints the module as JSON for the bar
+#        weather.sh refresh    forgets the IP location, so the next run
+#                              looks it up again (on click)
 
-readonly SIGNAL=9
-readonly CONF="$HOME/.config/waybar/weather.conf"
-readonly CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/waybar-weather"
+readonly CONF="$HOME/.config/quickshell/weather.conf"
+readonly CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/cyberpunk-weather"
 readonly IP_LOCATION_TTL=3600  # seconds the IP location is reused
 
 if [[ "${1:-}" == "refresh" ]]; then
     rm -f "$CACHE_DIR/ip-location"
-    pkill -RTMIN+$SIGNAL -x waybar
     exit 0
 fi
 
@@ -23,7 +21,7 @@ units=""
 [[ -f "$CONF" ]] && source "$CONF"
 
 source "$HOME/.config/dotfiles/lang.sh"
-source "$(resolve_lang "$HOME/.config/waybar/i18n/weather" sh)"
+source "$(resolve_lang "$HOME/.config/quickshell/i18n/weather" sh)"
 
 mkdir -p "$CACHE_DIR"
 lang="${LC_ALL:-${LC_MESSAGES:-$LANG}}"
@@ -31,10 +29,10 @@ lang="${lang%%_*}"
 lang="${lang%%.*}"
 [[ "$lang" =~ ^[a-z]{2,3}$ ]] || lang="en"
 
-# Prints the JSON for waybar
+# Prints the JSON for the bar
 output() {
     jq -cn --arg text "$1" --arg tooltip "$2" --arg class "$3" \
-        '{text: $text, tooltip: ($tooltip | gsub("&"; "&amp;") | gsub("<"; "&lt;")), class: $class}'
+        '{text: $text, tooltip: $tooltip, class: $class}'
 }
 
 # Offline or failed request: show the last weather, or hide the module

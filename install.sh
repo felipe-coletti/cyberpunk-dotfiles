@@ -21,7 +21,7 @@ readonly CONFIG_DIR="$HOME/.config"
 readonly SDDM_THEME_DIR="/usr/share/sddm/themes/cyberpunk"
 
 readonly PKGS=(
-    hyprland waybar kitty thunar yazi wofi mako hyprpaper
+    hyprland kitty thunar yazi wofi mako hyprpaper
     playerctl brightnessctl wireplumber pipewire
     ttf-jetbrains-mono-nerd ttf-font-awesome git rsync
     papirus-icon-theme noto-fonts-emoji
@@ -65,6 +65,27 @@ install_packages() {
     else
         ok "All packages are already installed."
     fi
+
+    install_quickshell
+}
+
+# The bar is made with Quickshell, which is on the AUR: pacman is used if it's
+# in the official repositories, otherwise yay or paru
+install_quickshell() {
+    if pacman -Qi quickshell &>/dev/null; then
+        ok "Quickshell is already installed."
+    elif pacman -Si quickshell &>/dev/null; then
+        sudo pacman -S --needed --noconfirm quickshell
+        ok "Quickshell installed."
+    elif command -v yay &>/dev/null; then
+        yay -S --needed --noconfirm quickshell
+        ok "Quickshell installed (AUR)."
+    elif command -v paru &>/dev/null; then
+        paru -S --needed --noconfirm quickshell
+        ok "Quickshell installed (AUR)."
+    else
+        warn "Quickshell not found: install it from the AUR (with yay, for example) for the bar to show up."
+    fi
 }
 
 # ─── 3. Back up existing configs ────────────────────────────
@@ -72,7 +93,7 @@ backup_existing() {
     section "Backing up existing configs"
 
     local has_backup=false
-    for dir in hypr waybar kitty yazi mako wofi hyprpaper colors dotfiles gtk-3.0 neon widgets; do
+    for dir in hypr quickshell kitty yazi mako wofi hyprpaper colors dotfiles gtk-3.0 neon widgets; do
         local target="$CONFIG_DIR/$dir"
         if [[ -e "$target" ]]; then
             mkdir -p "$BACKUP_DIR"
@@ -95,17 +116,16 @@ copy_config() {
 
     mkdir -p "$CONFIG_DIR"
 
-    for dir in hypr waybar kitty yazi mako wofi hyprpaper colors dotfiles gtk-3.0 neon widgets; do
+    for dir in hypr quickshell kitty yazi mako wofi hyprpaper colors dotfiles gtk-3.0 neon widgets; do
         local src="$REPO_DIR/.config/$dir"
         local dst="$CONFIG_DIR/$dir"
 
         if [[ -d "$src" ]]; then
             # Sync in place (without deleting the folder) so Hyprland's
             # autoreload never finds the config missing halfway through.
-            # Generated or personal files are left out (waybar language,
-            # Thunar/GTK bookmarks, chosen neon color, weather city)
+            # Personal files are left out (Thunar/GTK bookmarks, chosen
+            # neon color, weather city)
             rsync -a --delete \
-                --exclude "i18n/current.jsonc" \
                 --exclude "/bookmarks" \
                 --exclude "/color" \
                 --exclude "/weather.conf" \
@@ -117,9 +137,14 @@ copy_config() {
     done
 
     # The weather city is kept on reinstall; the default one (empty, so the
-    # location comes from the IP) is only copied the first time
-    if [[ ! -f "$CONFIG_DIR/waybar/weather.conf" ]]; then
-        cp "$REPO_DIR/.config/waybar/weather.conf" "$CONFIG_DIR/waybar/weather.conf"
+    # location comes from the IP) is only copied the first time. The city set
+    # with the waybar of version 1 is carried over
+    if [[ ! -f "$CONFIG_DIR/quickshell/weather.conf" ]]; then
+        if [[ -f "$CONFIG_DIR/waybar/weather.conf" ]]; then
+            cp "$CONFIG_DIR/waybar/weather.conf" "$CONFIG_DIR/quickshell/weather.conf"
+        else
+            cp "$REPO_DIR/.config/quickshell/weather.conf" "$CONFIG_DIR/quickshell/weather.conf"
+        fi
     fi
 }
 
@@ -272,9 +297,11 @@ post_install() {
     # Apply the config to the current session if Hyprland is running
     if [[ -n "${HYPRLAND_INSTANCE_SIGNATURE:-}" ]]; then
         hyprctl reload >/dev/null
+        # The bar of version 1, if it's still running
         pkill -x waybar || true
-        setsid -f "$CONFIG_DIR/waybar/launch.sh" >/dev/null 2>&1
-        ok "Hyprland and Waybar reloaded."
+        pkill -x quickshell || true
+        setsid -f quickshell >/dev/null 2>&1
+        ok "Hyprland and Quickshell reloaded."
     fi
 
     ok "Installation complete."
@@ -288,7 +315,7 @@ summary() {
     log ""
     log "To test:"
     log "  ${BLUE}hyprctl reload${NC}"
-    log "  ${BLUE}killall -SIGUSR2 waybar${NC}"
+    log "  ${BLUE}pkill -x quickshell; setsid -f quickshell${NC}"
     log ""
     log "If something went wrong, restore the backup:"
     log "  ${BLUE}cp -r $BACKUP_DIR/* ~/.config/${NC}"
