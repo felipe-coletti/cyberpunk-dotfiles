@@ -1,5 +1,0 @@
-shutdown="Apagar"
-reboot="Reiniciar"
-lock="Bloquear"
-logout="Cerrar sesión"
-prompt="Buscar"

@@ -1,5 +1,0 @@
-shutdown="Desligar"
-reboot="Reiniciar"
-lock="Bloquear"
-logout="Sair"
-prompt="Buscar"

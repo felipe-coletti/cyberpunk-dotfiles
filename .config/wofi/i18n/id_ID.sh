@@ -1,5 +1,0 @@
-shutdown="Matikan"
-reboot="Mulai ulang"
-lock="Kunci"
-logout="Keluar"
-prompt="Cari"

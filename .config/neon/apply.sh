@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Applies the neon color to the whole theme (Quickshell, wofi, GTK, Hyprland,
+# Applies the neon color to the whole theme (Quickshell, GTK, Hyprland,
 # hyprlock, the SDDM login screen, the kitty terminal and Neovim)
 # Usage: apply.sh [RRGGBB] [--no-reload]
 #   without a color: reapplies the saved color (or the default white)
@@ -102,8 +102,8 @@ if [[ -d "$CONFIG_DIR/kitty" ]]; then
 fi
 
 # ─── Reload ─────────────────────────────────────────────────
-# Quickshell follows the color file by itself; wofi and hyprlock read the
-# color when they open; GTK apps that are already open (Thunar) only change
+# Quickshell follows the color file by itself; hyprlock reads the color
+# when it opens; GTK apps that are already open (Thunar) only change
 # after a restart
 if $reload; then
     if [[ -n "${HYPRLAND_INSTANCE_SIGNATURE:-}" ]]; then

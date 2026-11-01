@@ -1,31 +1,17 @@
 #!/usr/bin/env bash
-# Asks for the weather city on wofi (right click on the weather module).
-# Typing a city sets it in weather.conf; the automatic option goes back to
-# the location of the IP
-
-source "$HOME/.config/dotfiles/lang.sh"
-source "$(resolve_lang "$HOME/.config/quickshell/i18n/weather" sh)"
+# Sets the weather city in weather.conf, keeping the chosen units. Called by
+# the city menu (right click on the weather); the bar follows weather.conf
+# and updates the weather
+# Usage: weather-city.sh CITY    uses that city
+#        weather-city.sh         goes back to the location of the IP
 
 readonly CONF="$HOME/.config/quickshell/weather.conf"
 readonly SCRIPTS="$HOME/.config/quickshell/scripts"
 
-city=""
 units=""
 [[ -f "$CONF" ]] && source "$CONF"
+city="${1:-}"
 
-# Only one menu at a time
-pgrep -x wofi >/dev/null && exit 0
-
-chosen=$(printf '%s\n' "$automatic" |
-    wofi --dmenu --prompt "${city_prompt^^}" --width 400 --height 120 -i) || exit 0
-
-if [[ "$chosen" == "$automatic" ]]; then
-    city=""
-else
-    city="$chosen"
-fi
-
-# Rewrites weather.conf with the new city, keeping the chosen units
 {
     printf '# Leave city empty to use the location of your IP, or right click the\n'
     printf '# weather on the bar to set it from a menu\n'
@@ -34,4 +20,5 @@ fi
     printf 'units=%q\n' "$units"
 } > "$CONF"
 
+# Back to the IP: look the location up again
 exec "$SCRIPTS/weather.sh" refresh

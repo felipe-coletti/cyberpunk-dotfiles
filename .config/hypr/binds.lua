@@ -13,7 +13,7 @@ hl.bind(mod .. " + Q", function()
     if w then
         hl.dispatch(hl.dsp.window.close())
     else
-        hl.exec_cmd(home .. "/.config/wofi/scripts/powermenu.sh")
+        hl.exec_cmd("quickshell ipc call power toggle")
     end
 end)
 hl.bind(mod .. " + V",         hl.dsp.window.float({ action = "toggle" }))

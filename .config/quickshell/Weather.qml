@@ -3,8 +3,9 @@ import Quickshell.Io
 import QtQuick
 
 // Weather from scripts/weather.sh (Open-Meteo), every 15 minutes. Click
-// looks the location up again; right click opens the menu to set the city,
-// which saves it in weather.conf (followed here, so the weather updates)
+// looks the location up again; right click opens the city menu
+// (CityMenu.qml), which saves the city in weather.conf (followed here, so the
+// weather updates)
 BarItem {
     id: root
 
@@ -21,7 +22,7 @@ BarItem {
 
     onClicked: event => {
         if (event.button === Qt.RightButton) {
-            Quickshell.execDetached([dir + "/scripts/weather-city.sh"]);
+            Quickshell.execDetached(["quickshell", "ipc", "call", "city", "toggle"]);
         } else {
             refresh.running = true;
         }

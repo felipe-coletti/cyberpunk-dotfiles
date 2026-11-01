@@ -21,7 +21,7 @@ readonly CONFIG_DIR="$HOME/.config"
 readonly SDDM_THEME_DIR="/usr/share/sddm/themes/cyberpunk"
 
 readonly PKGS=(
-    hyprland kitty thunar yazi wofi mako hyprpaper
+    hyprland kitty thunar yazi mako hyprpaper
     playerctl brightnessctl wireplumber pipewire
     ttf-jetbrains-mono-nerd ttf-font-awesome git rsync
     papirus-icon-theme noto-fonts-emoji
@@ -93,7 +93,7 @@ backup_existing() {
     section "Backing up existing configs"
 
     local has_backup=false
-    for dir in hypr quickshell kitty yazi mako wofi hyprpaper colors dotfiles gtk-3.0 neon widgets; do
+    for dir in hypr quickshell kitty yazi mako hyprpaper colors dotfiles gtk-3.0 neon widgets; do
         local target="$CONFIG_DIR/$dir"
         if [[ -e "$target" ]]; then
             mkdir -p "$BACKUP_DIR"
@@ -116,7 +116,7 @@ copy_config() {
 
     mkdir -p "$CONFIG_DIR"
 
-    for dir in hypr quickshell kitty yazi mako wofi hyprpaper colors dotfiles gtk-3.0 neon widgets; do
+    for dir in hypr quickshell kitty yazi mako hyprpaper colors dotfiles gtk-3.0 neon widgets; do
         local src="$REPO_DIR/.config/$dir"
         local dst="$CONFIG_DIR/$dir"
 
