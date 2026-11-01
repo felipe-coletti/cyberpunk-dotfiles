@@ -21,7 +21,7 @@ readonly CONFIG_DIR="$HOME/.config"
 readonly SDDM_THEME_DIR="/usr/share/sddm/themes/cyberpunk"
 
 readonly PKGS=(
-    hyprland kitty thunar yazi mako hyprpaper
+    hyprland kitty thunar yazi hyprpaper libnotify
     playerctl brightnessctl wireplumber pipewire
     ttf-jetbrains-mono-nerd ttf-font-awesome git rsync
     papirus-icon-theme noto-fonts-emoji
@@ -93,7 +93,7 @@ backup_existing() {
     section "Backing up existing configs"
 
     local has_backup=false
-    for dir in hypr quickshell kitty yazi mako hyprpaper colors dotfiles gtk-3.0 neon widgets; do
+    for dir in hypr quickshell kitty yazi hyprpaper colors dotfiles gtk-3.0 neon widgets; do
         local target="$CONFIG_DIR/$dir"
         if [[ -e "$target" ]]; then
             mkdir -p "$BACKUP_DIR"
@@ -116,7 +116,7 @@ copy_config() {
 
     mkdir -p "$CONFIG_DIR"
 
-    for dir in hypr quickshell kitty yazi mako hyprpaper colors dotfiles gtk-3.0 neon widgets; do
+    for dir in hypr quickshell kitty yazi hyprpaper colors dotfiles gtk-3.0 neon widgets; do
         local src="$REPO_DIR/.config/$dir"
         local dst="$CONFIG_DIR/$dir"
 
@@ -297,8 +297,10 @@ post_install() {
     # Apply the config to the current session if Hyprland is running
     if [[ -n "${HYPRLAND_INSTANCE_SIGNATURE:-}" ]]; then
         hyprctl reload >/dev/null
-        # The bar of version 1, if it's still running
+        # The bar and notifications of version 1, if they're still running
+        # (mako would keep the notification service)
         pkill -x waybar || true
+        pkill -x mako || true
         pkill -x quickshell || true
         setsid -f quickshell >/dev/null 2>&1
         ok "Hyprland and Quickshell reloaded."

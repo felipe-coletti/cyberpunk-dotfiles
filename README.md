@@ -67,6 +67,10 @@ units="metric"    # or "imperial" for °F and mph; empty follows your country
 
 Hover over it for details, and click it to refresh the weather and look up the location again. It updates every 15 minutes, and shows the last weather it got while offline. Your IP is sent to ipinfo.io to find the location (unless you set a city), and the coordinates to Open-Meteo to get the forecast.
 
+## Notifications
+
+Notifications pop up in the top right corner, under the bar, and are kept in the notification center until you close them. The bell on the right of the bar rings when one arrives; click it to open the center, with every notification and a button to clear them all. Click a notification to open it (for example, the chat it came from), or right click it to close it.
+
 ## Widgets
 
 Two desktop widgets sit on the right of the screen, under the windows, in the neon color:

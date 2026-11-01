@@ -9,6 +9,9 @@ import QtQuick
 Singleton {
     readonly property var languages: ({
         "en_US": {
+            "notifications": "Notifications",
+            "clearAll": "Clear all",
+            "noNotifications": "No notifications",
             "search": "Search",
             "shutdown": "Shut down",
             "reboot": "Reboot",
@@ -24,6 +27,9 @@ Singleton {
             "brightnessHint": "Monitor brightness\nScroll: adjust\nLeft click: 100%\nRight click: 0%"
         },
         "zh_CN": {
+            "notifications": "通知",
+            "clearAll": "全部清除",
+            "noNotifications": "没有通知",
             "search": "搜索",
             "shutdown": "关机",
             "reboot": "重启",
@@ -39,6 +45,9 @@ Singleton {
             "brightnessHint": "显示器亮度\n滚动：调节\n左键单击：100%\n右键单击：0%"
         },
         "hi_IN": {
+            "notifications": "सूचनाएँ",
+            "clearAll": "सब हटाएँ",
+            "noNotifications": "कोई सूचना नहीं",
             "search": "खोजें",
             "shutdown": "बंद करें",
             "reboot": "पुनः आरंभ करें",
@@ -54,6 +63,9 @@ Singleton {
             "brightnessHint": "मॉनिटर की चमक\nस्क्रॉल: बदलें\nबायाँ क्लिक: 100%\nदायाँ क्लिक: 0%"
         },
         "es_ES": {
+            "notifications": "Notificaciones",
+            "clearAll": "Borrar todo",
+            "noNotifications": "No hay notificaciones",
             "search": "Buscar",
             "shutdown": "Apagar",
             "reboot": "Reiniciar",
@@ -69,6 +81,9 @@ Singleton {
             "brightnessHint": "Brillo del monitor\nDesplazar: ajustar\nClic izquierdo: 100%\nClic derecho: 0%"
         },
         "ar_SA": {
+            "notifications": "الإشعارات",
+            "clearAll": "مسح الكل",
+            "noNotifications": "لا توجد إشعارات",
             "search": "بحث",
             "shutdown": "إيقاف التشغيل",
             "reboot": "إعادة التشغيل",
@@ -84,6 +99,9 @@ Singleton {
             "brightnessHint": "سطوع الشاشة\nالتمرير: ضبط\nالنقر الأيسر: 100%\nالنقر الأيمن: 0%"
         },
         "fr_FR": {
+            "notifications": "Notifications",
+            "clearAll": "Tout effacer",
+            "noNotifications": "Aucune notification",
             "search": "Rechercher",
             "shutdown": "Éteindre",
             "reboot": "Redémarrer",
@@ -99,6 +117,9 @@ Singleton {
             "brightnessHint": "Luminosité de l'écran\nDéfiler : régler\nClic gauche : 100 %\nClic droit : 0 %"
         },
         "bn_BD": {
+            "notifications": "বিজ্ঞপ্তি",
+            "clearAll": "সব মুছুন",
+            "noNotifications": "কোনো বিজ্ঞপ্তি নেই",
             "search": "খুঁজুন",
             "shutdown": "বন্ধ করুন",
             "reboot": "পুনরায় চালু করুন",
@@ -114,6 +135,9 @@ Singleton {
             "brightnessHint": "মনিটরের উজ্জ্বলতা\nস্ক্রল: ঠিক করুন\nবাম ক্লিক: 100%\nডান ক্লিক: 0%"
         },
         "pt_BR": {
+            "notifications": "Notificações",
+            "clearAll": "Limpar tudo",
+            "noNotifications": "Nenhuma notificação",
             "search": "Buscar",
             "shutdown": "Desligar",
             "reboot": "Reiniciar",
@@ -129,6 +153,9 @@ Singleton {
             "brightnessHint": "Brilho do monitor\nRolar: ajustar\nClique esquerdo: 100%\nClique direito: 0%"
         },
         "ru_RU": {
+            "notifications": "Уведомления",
+            "clearAll": "Очистить всё",
+            "noNotifications": "Нет уведомлений",
             "search": "Поиск",
             "shutdown": "Выключить",
             "reboot": "Перезагрузить",
@@ -144,6 +171,9 @@ Singleton {
             "brightnessHint": "Яркость монитора\nПрокрутка: настроить\nЛевый щелчок: 100%\nПравый щелчок: 0%"
         },
         "id_ID": {
+            "notifications": "Notifikasi",
+            "clearAll": "Hapus semua",
+            "noNotifications": "Tidak ada notifikasi",
             "search": "Cari",
             "shutdown": "Matikan",
             "reboot": "Mulai ulang",

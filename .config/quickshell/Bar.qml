@@ -2,8 +2,8 @@ import Quickshell
 import QtQuick
 
 // The status bar: power, color wheel and workspaces on the left; status
-// icons, weather and the clock on the right. Black, with a glowing neon
-// line at the bottom
+// icons, weather, the clock and the notifications bell on the right. Black,
+// with a glowing neon line at the bottom
 PanelWindow {
     id: bar
 
@@ -62,6 +62,7 @@ PanelWindow {
             Battery { anchors.verticalCenter: parent.verticalCenter }
             Weather { anchors.verticalCenter: parent.verticalCenter }
             Clock { anchors.verticalCenter: parent.verticalCenter }
+            NotificationButton { anchors.verticalCenter: parent.verticalCenter }
         }
     }
 
