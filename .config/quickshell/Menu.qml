@@ -84,7 +84,7 @@ PanelWindow {
         onCleared: menu.close()
     }
 
-    // The window: a black box with a glowing neon border, like wofi had
+    // The window: a black box with a glowing neon border
     NeonPanel {
         id: box
 
