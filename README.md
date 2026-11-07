@@ -10,9 +10,9 @@
 
 ## Screenshots
 
-![Desktop with the bar, Thunar and the power menu](assets/screenshots/desktop.png)
+![Desktop with the bar, Thunar, the widgets and the power menu](assets/screenshots/desktop.png)
 
-![The kitty terminal and the Neovim colorscheme](assets/screenshots/terminal-neovim.png)
+![The kitty terminal with Neovim and yazi](assets/screenshots/terminal-neovim.png)
 
 ![The SDDM login screen](assets/screenshots/login.png)
 
