@@ -18,6 +18,14 @@ Item {
         spread: 0
     }
 
+    // An opaque base, so the glow behind only shows around the box, not
+    // through a translucent fill
+    Rectangle {
+        anchors.fill: parent
+        visible: panel.glow
+        color: Theme.bg
+    }
+
     Rectangle {
         anchors.fill: parent
         color: panel.fill

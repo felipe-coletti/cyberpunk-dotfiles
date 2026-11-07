@@ -35,7 +35,8 @@ PanelWindow {
     margins.right: 20 - glowSpace
     implicitWidth: box.implicitWidth + 2 * glowSpace
     implicitHeight: box.implicitHeight + 2 * glowSpace
-    exclusionMode: ExclusionMode.Ignore
+    // Below the bar, not behind it
+    exclusionMode: ExclusionMode.Normal
     WlrLayershell.layer: WlrLayer.Bottom
     // The field takes the keyboard when it's clicked
     WlrLayershell.keyboardFocus: WlrKeyboardFocus.OnDemand
