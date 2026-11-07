@@ -1,7 +1,8 @@
 import QtQuick 2.15
 import SddmComponents 2.0
 
-// Login screen with the same layout as the hyprlock lock screen: time,
+// Login screen with the same layout as the lock screen
+// (.config/quickshell/LockSurface.qml): time,
 // date, user and password, plus the session and power buttons
 Rectangle {
     id: root

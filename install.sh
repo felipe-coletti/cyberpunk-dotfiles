@@ -26,7 +26,7 @@ readonly PKGS=(
     ttf-jetbrains-mono-nerd ttf-font-awesome git rsync
     papirus-icon-theme noto-fonts-emoji
     noto-fonts noto-fonts-cjk
-    hyprlock qt5-wayland qt6-wayland dconf sddm neovim
+    qt5-wayland qt6-wayland dconf sddm neovim
     python-gobject python-cairo gtk3 xdg-user-dirs jq gtk-layer-shell
     ffmpeg 7zip poppler fd ripgrep fzf zoxide imagemagick
 )

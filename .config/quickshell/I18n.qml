@@ -9,6 +9,9 @@ import QtQuick
 Singleton {
     readonly property var languages: ({
         "en_US": {
+            "password": "Password",
+            "unlock": "Unlock",
+            "wrongPassword": "Wrong password",
             "notifications": "Notifications",
             "clearAll": "Clear all",
             "noNotifications": "No notifications",
@@ -27,6 +30,9 @@ Singleton {
             "brightnessHint": "Monitor brightness\nScroll: adjust\nLeft click: 100%\nRight click: 0%"
         },
         "zh_CN": {
+            "password": "密码",
+            "unlock": "解锁",
+            "wrongPassword": "密码错误",
             "notifications": "通知",
             "clearAll": "全部清除",
             "noNotifications": "没有通知",
@@ -45,6 +51,9 @@ Singleton {
             "brightnessHint": "显示器亮度\n滚动：调节\n左键单击：100%\n右键单击：0%"
         },
         "hi_IN": {
+            "password": "पासवर्ड",
+            "unlock": "अनलॉक करें",
+            "wrongPassword": "गलत पासवर्ड",
             "notifications": "सूचनाएँ",
             "clearAll": "सब हटाएँ",
             "noNotifications": "कोई सूचना नहीं",
@@ -63,6 +72,9 @@ Singleton {
             "brightnessHint": "मॉनिटर की चमक\nस्क्रॉल: बदलें\nबायाँ क्लिक: 100%\nदायाँ क्लिक: 0%"
         },
         "es_ES": {
+            "password": "Contraseña",
+            "unlock": "Desbloquear",
+            "wrongPassword": "Contraseña incorrecta",
             "notifications": "Notificaciones",
             "clearAll": "Borrar todo",
             "noNotifications": "No hay notificaciones",
@@ -81,6 +93,9 @@ Singleton {
             "brightnessHint": "Brillo del monitor\nDesplazar: ajustar\nClic izquierdo: 100%\nClic derecho: 0%"
         },
         "ar_SA": {
+            "password": "كلمة المرور",
+            "unlock": "إلغاء القفل",
+            "wrongPassword": "كلمة مرور خاطئة",
             "notifications": "الإشعارات",
             "clearAll": "مسح الكل",
             "noNotifications": "لا توجد إشعارات",
@@ -99,6 +114,9 @@ Singleton {
             "brightnessHint": "سطوع الشاشة\nالتمرير: ضبط\nالنقر الأيسر: 100%\nالنقر الأيمن: 0%"
         },
         "fr_FR": {
+            "password": "Mot de passe",
+            "unlock": "Déverrouiller",
+            "wrongPassword": "Mot de passe incorrect",
             "notifications": "Notifications",
             "clearAll": "Tout effacer",
             "noNotifications": "Aucune notification",
@@ -117,6 +135,9 @@ Singleton {
             "brightnessHint": "Luminosité de l'écran\nDéfiler : régler\nClic gauche : 100 %\nClic droit : 0 %"
         },
         "bn_BD": {
+            "password": "পাসওয়ার্ড",
+            "unlock": "আনলক করুন",
+            "wrongPassword": "ভুল পাসওয়ার্ড",
             "notifications": "বিজ্ঞপ্তি",
             "clearAll": "সব মুছুন",
             "noNotifications": "কোনো বিজ্ঞপ্তি নেই",
@@ -135,6 +156,9 @@ Singleton {
             "brightnessHint": "মনিটরের উজ্জ্বলতা\nস্ক্রল: ঠিক করুন\nবাম ক্লিক: 100%\nডান ক্লিক: 0%"
         },
         "pt_BR": {
+            "password": "Senha",
+            "unlock": "Desbloquear",
+            "wrongPassword": "Senha incorreta",
             "notifications": "Notificações",
             "clearAll": "Limpar tudo",
             "noNotifications": "Nenhuma notificação",
@@ -153,6 +177,9 @@ Singleton {
             "brightnessHint": "Brilho do monitor\nRolar: ajustar\nClique esquerdo: 100%\nClique direito: 0%"
         },
         "ru_RU": {
+            "password": "Пароль",
+            "unlock": "Разблокировать",
+            "wrongPassword": "Неверный пароль",
             "notifications": "Уведомления",
             "clearAll": "Очистить всё",
             "noNotifications": "Нет уведомлений",
@@ -171,6 +198,9 @@ Singleton {
             "brightnessHint": "Яркость монитора\nПрокрутка: настроить\nЛевый щелчок: 100%\nПравый щелчок: 0%"
         },
         "id_ID": {
+            "password": "Kata sandi",
+            "unlock": "Buka kunci",
+            "wrongPassword": "Kata sandi salah",
             "notifications": "Notifikasi",
             "clearAll": "Hapus semua",
             "noNotifications": "Tidak ada notifikasi",

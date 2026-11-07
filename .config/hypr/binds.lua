@@ -46,7 +46,7 @@ hl.bind(mod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
 hl.bind(mod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
 -- ─── Session ────────────────────────────────────────────────
-hl.bind(mod .. " + L",         hl.dsp.exec_cmd("hyprlock"))
+hl.bind(mod .. " + L",         hl.dsp.exec_cmd("quickshell ipc call lock lock"))
 
 -- Saved to the pictures folder in the system language (Pictures, Imagens…)
 local screenshot = '"$(xdg-user-dir PICTURES)/screenshot-$(date +%Y%m%d-%H%M%S).png"'

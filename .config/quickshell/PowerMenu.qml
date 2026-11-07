@@ -11,7 +11,7 @@ Menu {
     readonly property var actions: [
         { label: I18n.t.shutdown, icon: "󰐥", command: ["systemctl", "poweroff"] },
         { label: I18n.t.reboot,   icon: "󰜉",   command: ["systemctl", "reboot"] },
-        { label: I18n.t.lock,     icon: "󰌾",     command: ["hyprlock"] },
+        { label: I18n.t.lock,     icon: "󰌾",     command: ["quickshell", "ipc", "call", "lock", "lock"] },
         { label: I18n.t.logout,   icon: "󰍃",   command: ["uwsm", "stop"] }
     ]
 

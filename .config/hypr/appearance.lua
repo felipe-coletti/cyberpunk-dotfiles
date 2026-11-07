@@ -48,5 +48,8 @@ hl.config({
         force_default_wallpaper = 0,
         disable_hyprland_logo   = true,
         background_color        = 0xff000000,
+        -- If Quickshell stops while the screen is locked, starting it
+        -- again takes the lock screen back
+        allow_session_lock_restore = true,
     },
 })
