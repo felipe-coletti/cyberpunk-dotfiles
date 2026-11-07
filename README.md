@@ -75,10 +75,10 @@ Notifications pop up in the top right corner, under the bar, and are kept in the
 
 Two desktop widgets sit on the right of the screen, under the windows, in the neon color:
 
-- **Now playing:** the cover, title and artist of the song that is playing, with buttons to skip and pause. It works with any player that `playerctl` can control (Spotify, browsers, mpv...).
+- **Now playing:** the cover, title and artist of the song that is playing, with buttons to skip and pause. It works with any player that supports MPRIS (Spotify, browsers, mpv...).
 - **Tasks:** a task list in the style of my [to-do-list](https://github.com/felipe-coletti/to-do-list). Type a task and press Enter to add it, click the square to mark it as done and the × to remove it. Tasks are kept in `~/.local/share/cyberpunk-dotfiles/todo.txt` (one per line, done ones start with `x `), so you can also edit them by hand.
 
-They start with Hyprland. To restart them, run `~/.config/widgets/start.sh`; to turn them off, remove that line from `~/.config/hypr/autostart.lua`.
+They're part of the Quickshell shell and follow the neon color live. To turn one off, remove its line from `~/.config/quickshell/widgets.conf` (or put `#` in front of it): it disappears right away, and your choice is kept on reinstall.
 
 ## Keybindings
 

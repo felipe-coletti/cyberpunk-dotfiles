@@ -27,7 +27,7 @@ readonly PKGS=(
     papirus-icon-theme noto-fonts-emoji
     noto-fonts noto-fonts-cjk
     qt5-wayland qt6-wayland dconf sddm neovim
-    python-gobject python-cairo gtk3 xdg-user-dirs jq gtk-layer-shell
+    python-gobject python-cairo gtk3 xdg-user-dirs jq
     ffmpeg 7zip poppler fd ripgrep fzf zoxide imagemagick
 )
 
@@ -93,7 +93,7 @@ backup_existing() {
     section "Backing up existing configs"
 
     local has_backup=false
-    for dir in hypr quickshell kitty yazi hyprpaper colors dotfiles gtk-3.0 neon widgets; do
+    for dir in hypr quickshell kitty yazi hyprpaper colors dotfiles gtk-3.0 neon; do
         local target="$CONFIG_DIR/$dir"
         if [[ -e "$target" ]]; then
             mkdir -p "$BACKUP_DIR"
@@ -116,7 +116,7 @@ copy_config() {
 
     mkdir -p "$CONFIG_DIR"
 
-    for dir in hypr quickshell kitty yazi hyprpaper colors dotfiles gtk-3.0 neon widgets; do
+    for dir in hypr quickshell kitty yazi hyprpaper colors dotfiles gtk-3.0 neon; do
         local src="$REPO_DIR/.config/$dir"
         local dst="$CONFIG_DIR/$dir"
 
@@ -124,11 +124,12 @@ copy_config() {
             # Sync in place (without deleting the folder) so Hyprland's
             # autoreload never finds the config missing halfway through.
             # Personal files are left out (Thunar/GTK bookmarks, chosen
-            # neon color, weather city)
+            # neon color, weather city, widgets turned on)
             rsync -a --delete \
                 --exclude "/bookmarks" \
                 --exclude "/color" \
                 --exclude "/weather.conf" \
+                --exclude "/widgets.conf" \
                 "$src/" "$dst/"
             ok "Copied: $dir"
         else
@@ -144,6 +145,16 @@ copy_config() {
             cp "$CONFIG_DIR/waybar/weather.conf" "$CONFIG_DIR/quickshell/weather.conf"
         else
             cp "$REPO_DIR/.config/quickshell/weather.conf" "$CONFIG_DIR/quickshell/weather.conf"
+        fi
+    fi
+
+    # Same for the list of widgets turned on, carried over from the widgets
+    # folder of version 1
+    if [[ ! -f "$CONFIG_DIR/quickshell/widgets.conf" ]]; then
+        if [[ -f "$CONFIG_DIR/widgets/widgets.conf" ]]; then
+            grep -v '^#' "$CONFIG_DIR/widgets/widgets.conf" > "$CONFIG_DIR/quickshell/widgets.conf" || true
+        else
+            cp "$REPO_DIR/.config/quickshell/widgets.conf" "$CONFIG_DIR/quickshell/widgets.conf"
         fi
     fi
 }
@@ -297,10 +308,11 @@ post_install() {
     # Apply the config to the current session if Hyprland is running
     if [[ -n "${HYPRLAND_INSTANCE_SIGNATURE:-}" ]]; then
         hyprctl reload >/dev/null
-        # The bar and notifications of version 1, if they're still running
-        # (mako would keep the notification service)
+        # The bar, notifications and widgets of version 1, if they're still
+        # running (mako would keep the notification service)
         pkill -x waybar || true
         pkill -x mako || true
+        pkill -f "/.config/widgets/[^/]+/main\.py" || true
         pkill -x quickshell || true
         setsid -f quickshell >/dev/null 2>&1
         ok "Hyprland and Quickshell reloaded."

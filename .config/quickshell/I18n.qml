@@ -9,6 +9,11 @@ import QtQuick
 Singleton {
     readonly property var languages: ({
         "en_US": {
+            "musicTitle": "Now playing",
+            "nothingPlaying": "Nothing playing",
+            "todoTitle": "Tasks",
+            "todoPlaceholder": "New task",
+            "todoEmpty": "No tasks yet",
             "password": "Password",
             "unlock": "Unlock",
             "wrongPassword": "Wrong password",
@@ -30,6 +35,11 @@ Singleton {
             "brightnessHint": "Monitor brightness\nScroll: adjust\nLeft click: 100%\nRight click: 0%"
         },
         "zh_CN": {
+            "musicTitle": "正在播放",
+            "nothingPlaying": "没有播放",
+            "todoTitle": "任务",
+            "todoPlaceholder": "新任务",
+            "todoEmpty": "还没有任务",
             "password": "密码",
             "unlock": "解锁",
             "wrongPassword": "密码错误",
@@ -51,6 +61,11 @@ Singleton {
             "brightnessHint": "显示器亮度\n滚动：调节\n左键单击：100%\n右键单击：0%"
         },
         "hi_IN": {
+            "musicTitle": "अभी चल रहा है",
+            "nothingPlaying": "कुछ नहीं चल रहा",
+            "todoTitle": "कार्य",
+            "todoPlaceholder": "नया कार्य",
+            "todoEmpty": "अभी कोई कार्य नहीं",
             "password": "पासवर्ड",
             "unlock": "अनलॉक करें",
             "wrongPassword": "गलत पासवर्ड",
@@ -72,6 +87,11 @@ Singleton {
             "brightnessHint": "मॉनिटर की चमक\nस्क्रॉल: बदलें\nबायाँ क्लिक: 100%\nदायाँ क्लिक: 0%"
         },
         "es_ES": {
+            "musicTitle": "Reproduciendo",
+            "nothingPlaying": "Nada en reproducción",
+            "todoTitle": "Tareas",
+            "todoPlaceholder": "Nueva tarea",
+            "todoEmpty": "Aún no hay tareas",
             "password": "Contraseña",
             "unlock": "Desbloquear",
             "wrongPassword": "Contraseña incorrecta",
@@ -93,6 +113,11 @@ Singleton {
             "brightnessHint": "Brillo del monitor\nDesplazar: ajustar\nClic izquierdo: 100%\nClic derecho: 0%"
         },
         "ar_SA": {
+            "musicTitle": "قيد التشغيل",
+            "nothingPlaying": "لا شيء قيد التشغيل",
+            "todoTitle": "المهام",
+            "todoPlaceholder": "مهمة جديدة",
+            "todoEmpty": "لا توجد مهام بعد",
             "password": "كلمة المرور",
             "unlock": "إلغاء القفل",
             "wrongPassword": "كلمة مرور خاطئة",
@@ -114,6 +139,11 @@ Singleton {
             "brightnessHint": "سطوع الشاشة\nالتمرير: ضبط\nالنقر الأيسر: 100%\nالنقر الأيمن: 0%"
         },
         "fr_FR": {
+            "musicTitle": "En cours de lecture",
+            "nothingPlaying": "Aucune lecture",
+            "todoTitle": "Tâches",
+            "todoPlaceholder": "Nouvelle tâche",
+            "todoEmpty": "Aucune tâche pour l'instant",
             "password": "Mot de passe",
             "unlock": "Déverrouiller",
             "wrongPassword": "Mot de passe incorrect",
@@ -135,6 +165,11 @@ Singleton {
             "brightnessHint": "Luminosité de l'écran\nDéfiler : régler\nClic gauche : 100 %\nClic droit : 0 %"
         },
         "bn_BD": {
+            "musicTitle": "এখন বাজছে",
+            "nothingPlaying": "কিছুই বাজছে না",
+            "todoTitle": "কাজ",
+            "todoPlaceholder": "নতুন কাজ",
+            "todoEmpty": "এখনো কোনো কাজ নেই",
             "password": "পাসওয়ার্ড",
             "unlock": "আনলক করুন",
             "wrongPassword": "ভুল পাসওয়ার্ড",
@@ -156,6 +191,11 @@ Singleton {
             "brightnessHint": "মনিটরের উজ্জ্বলতা\nস্ক্রল: ঠিক করুন\nবাম ক্লিক: 100%\nডান ক্লিক: 0%"
         },
         "pt_BR": {
+            "musicTitle": "Tocando agora",
+            "nothingPlaying": "Nada tocando",
+            "todoTitle": "Tarefas",
+            "todoPlaceholder": "Nova tarefa",
+            "todoEmpty": "Nenhuma tarefa ainda",
             "password": "Senha",
             "unlock": "Desbloquear",
             "wrongPassword": "Senha incorreta",
@@ -177,6 +217,11 @@ Singleton {
             "brightnessHint": "Brilho do monitor\nRolar: ajustar\nClique esquerdo: 100%\nClique direito: 0%"
         },
         "ru_RU": {
+            "musicTitle": "Сейчас играет",
+            "nothingPlaying": "Ничего не играет",
+            "todoTitle": "Задачи",
+            "todoPlaceholder": "Новая задача",
+            "todoEmpty": "Задач пока нет",
             "password": "Пароль",
             "unlock": "Разблокировать",
             "wrongPassword": "Неверный пароль",
@@ -198,6 +243,11 @@ Singleton {
             "brightnessHint": "Яркость монитора\nПрокрутка: настроить\nЛевый щелчок: 100%\nПравый щелчок: 0%"
         },
         "id_ID": {
+            "musicTitle": "Sedang diputar",
+            "nothingPlaying": "Tidak ada yang diputar",
+            "todoTitle": "Tugas",
+            "todoPlaceholder": "Tugas baru",
+            "todoEmpty": "Belum ada tugas",
             "password": "Kata sandi",
             "unlock": "Buka kunci",
             "wrongPassword": "Kata sandi salah",
